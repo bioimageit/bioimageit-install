@@ -72,7 +72,10 @@ intall_bioimageit(){
     cp bioimageit-package/scripts/data_processing.sh ./data_processing.sh
     cp bioimageit-package/scripts/jupyter.sh ./jupyter.sh
 
+    # userdata
+    mkdir userdata
 
+    # install and config packages
     pip install ./bioimageit_core
     pip install ./bioimageit_gui
     pip install ./bioimageit_viewer
