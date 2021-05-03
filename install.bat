@@ -32,9 +32,9 @@ copy bioimageit-toolboxes\formats.json .\formats.json
 rd /s /q .\bioimageit-toolboxes
 
 REM create shortcuts
-copy bioimageit-package\scripts\data_management.sh .\data_management.bat
-copy bioimageit-package\scripts\data_processing.sh .\data_processing.bat
-copy bioimageit-package\scripts\jupyter.sh .\jupyter.bat
+copy bioimageit-package\scripts\data_management.bat .\data_management.bat
+copy bioimageit-package\scripts\data_processing.bat .\data_processing.bat
+copy bioimageit-package\scripts\jupyter.bat .\jupyter.bat
 
 REM userdata
 mkdir userdata
