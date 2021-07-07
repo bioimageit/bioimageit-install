@@ -12,10 +12,9 @@ echo "username:" %in_username%
 echo "backend:" %in_backend%
 
 
-
 cd %in_destination_dir%
 python -m venv .bioimageit-env
-.bioimageit-env/bin/activate.bat
+call .bioimageit-env\Scripts\activate
 
 git clone https://github.com/bioimageit/bioimageit_core.git
 git clone https://github.com/bioimageit/bioimageit_gui.git
@@ -25,16 +24,16 @@ git clone https://github.com/bioimageit/bioimageit-package.git
 
 REM create toolboxes database
 mkdir toolboxes
-copy -r bioimageit-toolboxes\thumbs toolboxes
-copy bioimageit-toolboxes\toolboxes.json toolboxes\toolboxes.json
-copy bioimageit-toolboxes\tools.json toolboxes\tools.json
-copy bioimageit-toolboxes\formats.json .\formats.json
-rd /s /q .\bioimageit-toolboxes
+copy .\bioimageit-toolboxes\thumbs\ .\toolboxes
+copy .\bioimageit-toolboxes\toolboxes.json .\toolboxes\toolboxes.json
+copy .\bioimageit-toolboxes\tools.json .\toolboxes\tools.json
+copy .\bioimageit-toolboxes\formats.json .\formats.json
+REM rd /s /q .\bioimageit-toolboxes
 
 REM create shortcuts
-copy bioimageit-package\scripts\data_management.bat .\data_management.bat
-copy bioimageit-package\scripts\data_processing.bat .\data_processing.bat
-copy bioimageit-package\scripts\jupyter.bat .\jupyter.bat
+copy .\bioimageit-package\scripts\data_management.bat .\data_management.bat
+copy .\bioimageit-package\scripts\data_processing.bat .\data_processing.bat
+copy .\bioimageit-package\scripts\jupyter.bat .\jupyter.bat
 
 REM userdata
 mkdir userdata
