@@ -30,6 +30,7 @@ copy .\bioimageit-package\scripts\data_management.bat .\data_management.bat
 copy .\bioimageit-package\scripts\data_processing.bat .\data_processing.bat
 copy .\bioimageit-package\scripts\jupyter.bat .\jupyter.bat
 copy .\bioimageit-package\scripts\runnerapp.bat .\runnerapp.bat
+copy .\bioimageit-package\scripts\viewer.bat .\viewer.bat
 
 
 REM userdata
