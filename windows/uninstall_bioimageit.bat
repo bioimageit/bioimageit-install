@@ -11,7 +11,7 @@
 ::cBs/ulQjdF+5
 ::ZR41oxFsdFKZSDk=
 ::eBoioBt6dFKZSDk=
-::cRo6pxp7LAbNWATEpSI=
+::cRo6pxp7LAbNWATEpCI=
 ::egkzugNsPRvcWATEpCI=
 ::dAsiuh18IRvcCxnZtBJQ
 ::cRYluBh/LU+EWAnk
@@ -45,7 +45,7 @@ del "C:\Users\%USERNAME%\Desktop\BioimageIT_processing.lnk"
 
 rem DONE !
 
-call "C:\Users\%USERNAME%\BioimageIT_installation_files\bioimageit-install\remove_bioimageit_env.bat"
+call "C:\Users\%USERNAME%\BioimageIT_installation_files\bioimageit-install\windows\remove_bioimageit_env.bat"
 
 rem UNINSTALL CONDA ? If YES, press ENTER. If NO, just  close the window
 
