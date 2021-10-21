@@ -15,6 +15,7 @@ git clone https://github.com/bioimageit/bioimageit_gui.git
 git clone https://github.com/bioimageit/bioimageit_viewer.git
 git clone https://github.com/bioimageit/bioimageit-toolboxes.git
 git clone https://github.com/bioimageit/bioimageit-package.git
+git clone https://github.com/bioimageit/bioimageit-install.git
 
 REM create toolboxes database
 mkdir toolboxes
