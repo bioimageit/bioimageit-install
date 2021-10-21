@@ -30,15 +30,15 @@
 ::ZQ0/vhVqMQ3MEVWAtB9wSA==
 ::Zg8zqx1/OA3MEVWAtB9wSA==
 ::dhA7pRFwIByZRRnk
-::Zh4grVQjdCyDJGyX8VAjFDV7YkSjGEaTKIk45//14+WGpl4hduswcYLa3bGnFN8a5FbwdJoh02gUndMJbA==
+::Zh4grVQjdCyDJGyX8VAjFDV7YkSjGEaTKIk45+vu4u+Jtl4hduswcYLa3bGnFN8a5FbwdJoh02gUndMJbA==
 ::YB416Ek+Zm8=
 ::
 ::
 ::978f952a14a936cc963da21a135fa983
 rem Is Winget already installed ?
-start ms-appinstaller:?source=https://aka.ms/getwinget
+rem start ms-appinstaller:?source=https://aka.ms/getwinget
 
-pause
+rem pause
 
 set installer_dir=%CD%
 
