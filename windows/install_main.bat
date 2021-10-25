@@ -13,7 +13,7 @@
 ::cBs/ulQjdF+5
 ::ZR41oxFsdFKZSDk=
 ::eBoioBt6dFKZSDk=
-::cRo6pxp7LAbNWATEpSI=
+::cRo6pxp7LAbNWATEpCI=
 ::egkzugNsPRvcWATEpCI=
 ::dAsiuh18IRvcCxnZtBJQ
 ::cRYluBh/LU+EWAnk
@@ -30,15 +30,15 @@
 ::ZQ0/vhVqMQ3MEVWAtB9wSA==
 ::Zg8zqx1/OA3MEVWAtB9wSA==
 ::dhA7pRFwIByZRRnk
-::Zh4grVQjdCyDJGyX8VAjFDV7YkSjGEaTKIk45//14+WGpl4hduswcYLa3bGnFN8a5FbwdJoh02gUndMJbA==
+::Zh4grVQjdCyDJGyX8VAjFDV7YkSjGEaTKIk45+vu4u+Jtl4hduswcYLa3bGnFN8a5FbwdJoh125Tl8UzChJUewGXbAY7oGNDsWGMI4qVvRz1S0SF2lw5FWF7kHDsriI0ad5pncYq5x+38l7rnqkc1GqxW7ELdQ==
 ::YB416Ek+Zm8=
 ::
 ::
 ::978f952a14a936cc963da21a135fa983
 rem Is Winget already installed ?
-start ms-appinstaller:?source=https://aka.ms/getwinget
+rem start ms-appinstaller:?source=https://aka.ms/getwinget
 
-pause
+rem pause
 
 set installer_dir=%CD%
 
@@ -106,6 +106,19 @@ echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
 echo sLinkFile = "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT\data_management.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\Users\%USERNAME%\BioimageIT_installation_files\data_management.bat" >> %SCRIPT%
+echo oLink.Save >> %SCRIPT%
+cscript /nologo %SCRIPT%
+del %SCRIPT%
+
+
+
+rem start menu shortcut for uninstallaton
+@echo off
+set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
+echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
+echo sLinkFile = "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT\uninstall_BioimageIT.lnk" >> %SCRIPT%
+echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
+echo oLink.TargetPath = "C:\Users\%USERNAME%\BioimageIT_installation_files\bioimageit-install\windows\uninstall_bioimageit.exe" >> %SCRIPT%
 echo oLink.Save >> %SCRIPT%
 cscript /nologo %SCRIPT%
 del %SCRIPT%
