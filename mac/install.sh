@@ -75,7 +75,8 @@ backend="CONDA"
 # setup usefull path
 userdir="/Users/$USER"
 
-installdir=/Applications/BioimageIT.app
+#installdir=/Applications/BioimageIT.app
+installdir="$userdir/BioimageIT"
 conda_path="$installdir/miniconda3/condabin/conda"
 python_path="$installdir/miniconda3/envs/bioimageit/bin/python"
 pip_path="$installdir/miniconda3/envs/bioimageit/bin/pip"
