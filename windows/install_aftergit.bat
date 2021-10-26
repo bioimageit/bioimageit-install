@@ -27,11 +27,11 @@ copy .\bioimageit-toolboxes\formats.json .\formats.json
 REM rd /s /q .\bioimageit-toolboxes
 
 REM create shortcuts
-copy .\bioimageit-package\scripts\data_management.bat .\data_management.bat
-copy .\bioimageit-package\scripts\data_processing.bat .\data_processing.bat
-copy .\bioimageit-package\scripts\jupyter.bat .\jupyter.bat
-copy .\bioimageit-package\scripts\runnerapp.bat .\runnerapp.bat
-copy .\bioimageit-package\scripts\viewer.bat .\viewer.bat
+copy .\bioimageit-package\windows\data_management.bat .\data_management.bat
+copy .\bioimageit-package\windows\data_processing.bat .\data_processing.bat
+copy .\bioimageit-package\windows\jupyter.bat .\jupyter.bat
+copy .\bioimageit-package\windows\runnerapp.bat .\runnerapp.bat
+copy .\bioimageit-package\windows\viewer.bat .\viewer.bat
 
 
 REM userdata
