@@ -45,7 +45,6 @@ del "C:\Users\%USERNAME%\Desktop\BioimageIT_processing.lnk"
 
 rem DONE !
 
-call "C:\Users\%USERNAME%\BioimageIT_installation_files\bioimageit-install\windows\remove_bioimageit_env.bat"
 
 rem UNINSTALL CONDA ? If YES, press ENTER. If NO, just  close the window
 
@@ -54,5 +53,8 @@ pause
 start /D "C:\Users\%USERNAME%\BioimageIT_installation_files\Miniconda3" Uninstall-Miniconda3.exe
 
 rmdir /s /q "C:\Users\%USERNAME%\BioimageIT_installation_files"
+
+
+rem UNINSTALLATION FINISHED
 
 pause
