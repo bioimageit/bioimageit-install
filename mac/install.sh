@@ -81,6 +81,8 @@ conda_path="$installdir/miniconda3/condabin/conda"
 python_path="$installdir/miniconda3/envs/bioimageit/bin/python"
 pip_path="$installdir/miniconda3/envs/bioimageit/bin/pip"
 
+chmod +x "$installdir/miniconda3/etc/profile.d/conda.sh"
+
 # create the install directory
 cd $userdir
 mkdir -p "$installdir"
