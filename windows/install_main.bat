@@ -124,4 +124,11 @@ cscript /nologo %SCRIPT%
 del %SCRIPT%
 
 
+cd "C:\Users\%USERNAME%\BioimageIT_installation_files"
+del "C:\Users\%USERNAME%\BioimageIT_installation_files\install_main.bat"
+del "C:\Users\%USERNAME%\BioimageIT_installation_files\install.bat"
+del "C:\Users\%USERNAME%\BioimageIT_installation_files\install_conda_docker.bat"
+del "C:\Users\%USERNAME%\BioimageIT_installation_files\install_aftergit.bat"
+
+
 pause
