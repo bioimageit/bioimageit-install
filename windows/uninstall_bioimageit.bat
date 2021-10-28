@@ -1,7 +1,5 @@
 ::[Bat To Exe Converter]
 ::
-::fBE1pAF6MU+EWHreyHcjLQlHcCqtEiubIpg1xtTf4OmSr0gTQPEDWobU07mPJ+U63nrte4U513ZWmd8FAxVneBunaxwIq2dNv2mEMMKVp0LoRFud50c8J3J9iWffmzgHctZlldUG7CK380TynqIV2GzAW6cYW2Hg1cw=
-::fBE1pAF6MU+EWHreyHcjLQlHcCqtEiubIpg1xtTf4OmSr0gTQPEDWobU07mPJ+U63nrte4U513ZWmd8FAxVneBunaxwIq2dNv2mEMMKVp0LoRFud50c8J3J9iWffmzgHdd1hlNAX0iyyw0/2kKwd0H/6V71AF2L1oQ==
 ::YAwzoRdxOk+EWAnk
 ::fBw5plQjdG8=
 ::YAwzuBVtJxjWCl3EqQJgSA==
@@ -51,6 +49,8 @@ rem UNINSTALL CONDA ? If YES, press ENTER. If NO, just  close the window
 pause
 
 start /D "C:\Users\%USERNAME%\BioimageIT_installation_files\Miniconda3" Uninstall-Miniconda3.exe
+
+pause
 
 rmdir /s /q "C:\Users\%USERNAME%\BioimageIT_installation_files"
 
