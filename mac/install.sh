@@ -43,11 +43,11 @@ setup_bioimageit(){
     cp bioimageit-package/mac/BioImageIT-Runner.sh BioImageIT-Runner.sh
     cp bioimageit-package/mac/BioImageIT-Viewer.sh BioImageIT-Viewer.sh
 
-    chmod +x data_management.sh
-    chmod +x data_processing.sh
+    chmod +x BioImageIT.sh
+    chmod +x BioImageIT-Toolboxes.sh
     chmod +x jupyter.sh
-    chmod +x runnerapp.sh
-    chmod +x viewer.sh
+    chmod +x BioImageIT-Runner.sh
+    chmod +x BioImageIT-Viewer.sh
 
     # userdata
     mkdir userdata
