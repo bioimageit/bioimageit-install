@@ -21,5 +21,7 @@ rem cd %BASEDIR%
 
 set conda_path="C:\Users\%USERNAME%\BioimageIT_installation_files\Miniconda3\condabin\conda.bat"
 
-call %conda_path% upgrade conda
+call %conda_path% upgrade conda -y
+call %conda_path% config --add channels conda-forge
+call %conda_path% config --add channels bioimageit
 call %conda_path% create -y --name bioimageit python=3.9

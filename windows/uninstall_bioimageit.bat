@@ -52,7 +52,7 @@ start /D "C:\Users\%USERNAME%\BioimageIT_installation_files\Miniconda3" Uninstal
 
 pause
 
-rmdir /s /q "C:\Users\%USERNAME%\BioimageIT_installation_files"
+if not exist "C:\Users\%USERNAME%\BioimageIT_installation_files\Miniconda3\Uninstall-Miniconda3.exe" rmdir /s /q "C:\Users\%USERNAME%\BioimageIT_installation_files"
 
 
 rem UNINSTALLATION FINISHED
