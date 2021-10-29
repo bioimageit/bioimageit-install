@@ -37,17 +37,17 @@ setup_bioimageit(){
     # rm -rf ./bioimageit-toolboxes
 
     # create shortcuts
-    cp bioimageit-package/mac/data_management.sh data_management.sh
-    cp bioimageit-package/mac/data_processing.sh data_processing.sh
+    cp bioimageit-package/mac/BioImageIT.sh BioImageIT.sh
+    cp bioimageit-package/mac/BioImageIT-Toolboxes.sh BioImageIT-Toolboxes.sh
     cp bioimageit-package/mac/jupyter.sh jupyter.sh
-    cp bioimageit-package/mac/runnerapp.sh runnerapp.sh
-    cp bioimageit-package/mac/viewer.sh viewer.sh
+    cp bioimageit-package/mac/BioImageIT-Runner.sh BioImageIT-Runner.sh
+    cp bioimageit-package/mac/BioImageIT-Viewer.sh BioImageIT-Viewer.sh
 
-    chmod +x data_management.sh
-    chmod +x data_processing.sh
+    chmod +x BioImageIT.sh
+    chmod +x BioImageIT-Toolboxes.sh
     chmod +x jupyter.sh
-    chmod +x runnerapp.sh
-    chmod +x viewer.sh
+    chmod +x BioImageIT-Runner.sh
+    chmod +x BioImageIT-Viewer.sh
 
     # userdata
     mkdir userdata
