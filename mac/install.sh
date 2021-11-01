@@ -5,11 +5,13 @@ install_miniconda(){
 
     mkdir $installdir/miniconda3
     curl -o "$installdir/miniconda3/miniconda.sh" https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
-    #wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O "$installdir/miniconda3/miniconda.sh"
     bash "$installdir/miniconda3/miniconda.sh" -b -u -p "$installdir/miniconda3/"
     rm -rf $installdir/miniconda3/miniconda.sh
-    #$installdir/miniconda3/bin/conda init bash
-    #$installdir/miniconda3/bin/conda init zsh
+
+    chmod +x "$installdir/miniconda3/etc/profile.d/conda.sh"
+    "$installdir/miniconda3/etc/profile.d/conda.sh" upgrade conda -y
+    "$installdir/miniconda3/etc/profile.d/conda.sh" config --add channels conda-forge
+    "$installdir/miniconda3/etc/profile.d/conda.sh" config --add channels bioimageit
 }   
 
 setup_bioimageit(){
@@ -21,6 +23,7 @@ setup_bioimageit(){
 
     cd $in_destination_dir
 
+    git clone https://github.com/bioimageit/bioimageit_formats.git
     git clone https://github.com/bioimageit/bioimageit_core.git
     git clone https://github.com/bioimageit/bioimageit_gui.git
     git clone https://github.com/bioimageit/bioimageit_viewer.git
@@ -34,39 +37,32 @@ setup_bioimageit(){
     cp bioimageit-toolboxes/toolboxes.json toolboxes/toolboxes.json
     cp bioimageit-toolboxes/tools.json toolboxes/tools.json
     cp bioimageit-toolboxes/formats.json ./formats.json
-    # rm -rf ./bioimageit-toolboxes
 
     # create shortcuts
     cp bioimageit-package/mac/BioImageIT.sh BioImageIT.sh
+    cp bioimageit-package/mac/BioImageIT-Browser.sh BioImageIT-Browser.sh
     cp bioimageit-package/mac/BioImageIT-Toolboxes.sh BioImageIT-Toolboxes.sh
     cp bioimageit-package/mac/jupyter.sh jupyter.sh
     cp bioimageit-package/mac/BioImageIT-Runner.sh BioImageIT-Runner.sh
     cp bioimageit-package/mac/BioImageIT-Viewer.sh BioImageIT-Viewer.sh
 
     chmod +x BioImageIT.sh
+    chmod +x BioImageIT-Browser.sh
     chmod +x BioImageIT-Toolboxes.sh
     chmod +x jupyter.sh
     chmod +x BioImageIT-Runner.sh
     chmod +x BioImageIT-Viewer.sh
 
     # userdata
-    mkdir userdata
+    mkdir workspace
 
     # install and config packages
+    $pip_path install ./bioimageit_formats
     $pip_path install ./bioimageit_core
     $pip_path install ./bioimageit_gui
     $pip_path install ./bioimageit_viewer
     $python_path bioimageit_core/config.py "${in_username}" "${in_backend}"
     $python_path bioimageit_gui/config.py 
-}
-
-create_app_contents(){
-    installdir=$1
-
-    mkdir -p "$installdir/Contents/MacOS";
-    cp "$installdir/bioimageit-package/mac/Info.plist" "$installdir/Contents/Info.plist"
-    cp "$installdir/data_management.sh" "$installdir/Contents/MacOS/BioimageIT"
-    chmod +x "$installdir/Contents/MacOS/BioimageIT"
 }
 
 ######################## MAIN #######################
@@ -77,11 +73,10 @@ userdir="/Users/$USER"
 
 #installdir=/Applications/BioimageIT.app
 installdir="$userdir/BioimageIT"
-conda_path="$installdir/miniconda3/condabin/conda"
+conda_bin="$installdir/miniconda3/condabin/conda"
+conda_sh="$installdir/miniconda3/etc/profile.d/conda.sh"
 python_path="$installdir/miniconda3/envs/bioimageit/bin/python"
 pip_path="$installdir/miniconda3/envs/bioimageit/bin/pip"
-
-chmod +x "$installdir/miniconda3/etc/profile.d/conda.sh"
 
 # create the install directory
 cd $userdir
@@ -92,10 +87,8 @@ cd "$installdir"
 install_miniconda $installdir
 
 # create bioimageit env
-$conda_path create -y --name bioimageit python=3.9
+$conda_bin create -y --name bioimageit python=3.9
 
 # clone and setup BioImageIT
 setup_bioimageit $installdir $python_path $pip_path $USER "CONDA" 
 
-# create the Mac app directory
-create_app_contents $installdir
