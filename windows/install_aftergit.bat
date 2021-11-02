@@ -36,7 +36,7 @@ copy .\bioimageit-package\windows\BioImageIT-Viewer.bat .\BioImageIT-Viewer.bat
 copy .\bioimageit-package\windows\jupyter.bat .\jupyter.bat
 
 
-REM userdata
+REM workspace
 mkdir workspace
 
 REM install and config packages
