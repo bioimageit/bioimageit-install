@@ -1,5 +1,5 @@
 set in_destination_dir="."
-set in_backend="CONDA_DOCKER"
+set in_backend="CONDA"
 
 REM check inputs
 echo "destination dir:" %in_destination_dir%
