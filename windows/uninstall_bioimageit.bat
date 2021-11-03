@@ -26,7 +26,7 @@
 ::ZQ0/vhVqMQ3MEVWAtB9wSA==
 ::Zg8zqx1/OA3MEVWAtB9wSA==
 ::dhA7pRFwIByZRRnk
-::Zh4grVQjdCyDJGyX8VAjFDV7YkSjGEaTKIk45+vu4u+Jtl4hduswcYLa3bGnFN8a5FbwdJoh125Tl8UzChJUewGXbAY7oGNDsWGMI4qVvRz1S0SF2lw5FWF7kHDsmSUybsB8m88P7CK380TynqIV2GyxW7ELdQ==
+::Zh4grVQjdCuDJG2W9VQxIRdobg2NNWa7AbA13Nfy4fmTo0ERVfY2d4Hk3L2CJfMv6EzrfJss0X9TjIYFAghMfx6nUhg9p2pNoXe5IsmVvRz1S0SF2Uk5FGx5hmTVhT91Zctt+g==
 ::YB416Ek+Zm8=
 ::
 ::
@@ -48,11 +48,11 @@ rem UNINSTALL CONDA ? If YES, press ENTER. If NO, just  close the window
 
 pause
 
-start /D "C:\Users\%USERNAME%\BioimageIT_installation_files\Miniconda3" Uninstall-Miniconda3.exe
+start /D "C:\Users\%USERNAME%\BioImageIT\Miniconda3" Uninstall-Miniconda3.exe
 
 pause
 
-if not exist "C:\Users\%USERNAME%\BioimageIT_installation_files\Miniconda3\Uninstall-Miniconda3.exe" rmdir /s /q "C:\Users\%USERNAME%\BioimageIT_installation_files"
+if not exist "C:\Users\%USERNAME%\BioImageIT\Miniconda3\Uninstall-Miniconda3.exe" rmdir /s /q "C:\Users\%USERNAME%\BioImageIT"
 
 
 rem UNINSTALLATION FINISHED
