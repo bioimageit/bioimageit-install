@@ -43,8 +43,8 @@ rem pause
 set installer_dir=%CD%
 
 cd "C:\Users\%USERNAME%"
-mkdir BioimageIT_installation_files
-cd BioimageIT_installation_files
+mkdir BioImageIT
+cd BioImageIT
 
 copy "%installer_dir%\install.bat" .\install.bat
 copy "%installer_dir%\install_main.bat" .\install_main.bat
@@ -66,7 +66,7 @@ set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
 echo sLinkFile = "%USERPROFILE%\Desktop\BioimageIT.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\Users\%USERNAME%\BioimageIT_installation_files\BioImageIT.bat" >> %SCRIPT%
+echo oLink.TargetPath = "C:\Users\%USERNAME%\BioImageIT\BioImageIT.bat" >> %SCRIPT%
 echo oLink.Save >> %SCRIPT%
 cscript /nologo %SCRIPT%
 del %SCRIPT%
@@ -79,7 +79,7 @@ set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
 echo sLinkFile = "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT\BioImageIT.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\Users\%USERNAME%\BioimageIT_installation_files\BioImageIT.bat" >> %SCRIPT%
+echo oLink.TargetPath = "C:\Users\%USERNAME%\BioImageIT\BioImageIT.bat" >> %SCRIPT%
 echo oLink.Save >> %SCRIPT%
 cscript /nologo %SCRIPT%
 del %SCRIPT%
@@ -92,17 +92,17 @@ set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
 echo sLinkFile = "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT\uninstall_BioimageIT.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\Users\%USERNAME%\BioimageIT_installation_files\bioimageit-install\windows\uninstall_bioimageit.exe" >> %SCRIPT%
+echo oLink.TargetPath = "C:\Users\%USERNAME%\BioImageIT\bioimageit-install\windows\uninstall_bioimageit.exe" >> %SCRIPT%
 echo oLink.Save >> %SCRIPT%
 cscript /nologo %SCRIPT%
 del %SCRIPT%
 
 
-cd "C:\Users\%USERNAME%\BioimageIT_installation_files"
-del "C:\Users\%USERNAME%\BioimageIT_installation_files\install_main.bat"
-del "C:\Users\%USERNAME%\BioimageIT_installation_files\install.bat"
-del "C:\Users\%USERNAME%\BioimageIT_installation_files\install_conda_docker.bat"
-del "C:\Users\%USERNAME%\BioimageIT_installation_files\install_aftergit.bat"
+cd "C:\Users\%USERNAME%\BioImageIT"
+del "C:\Users\%USERNAME%\BioImageIT\install_main.bat"
+del "C:\Users\%USERNAME%\BioImageIT\install.bat"
+del "C:\Users\%USERNAME%\BioImageIT\install_conda_docker.bat"
+del "C:\Users\%USERNAME%\BioImageIT\install_aftergit.bat"
 
 
 pause
