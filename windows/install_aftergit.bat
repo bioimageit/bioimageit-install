@@ -34,6 +34,7 @@ copy .\bioimageit-package\windows\BioImageIT-Toolboxes.bat .\BioImageIT-Toolboxe
 copy .\bioimageit-package\windows\BioImageIT-Runner.bat .\BioImageIT-Runner.bat
 copy .\bioimageit-package\windows\BioImageIT-Viewer.bat .\BioImageIT-Viewer.bat
 copy .\bioimageit-package\windows\jupyter.bat .\jupyter.bat
+copy .\bioimageit-package\windows\workspace.bat .\workspace.bat
 
 
 REM workspace
