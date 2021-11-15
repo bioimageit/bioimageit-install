@@ -10,3 +10,4 @@ del fiji.zip
 
 cd Fiji.app
 ImageJ-win64.exe --update all
+cd C:\Users\"%USERNAME%"\BioImageIT
