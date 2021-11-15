@@ -3,10 +3,7 @@
 ::fBE1pAF6MU+EWH3eyHYiKQ1VRQi+HmK1D7gd7+3S29WOrF4JVe4zeZvS1bqxJukf71bYd58i33dbn84FGFZRcAG/bwM4lXlLuGCKINSgugHyXkmF6gUyGnEU
 ::fBE1pAF6MU+EWH3eyHYiKQ1VRQi+HmK1D7gd7+3S29WOrF4JVe4zeZvS1bqxJukf71bYd58i33dbn84FGFZRcAG/bwM4lXlLuGCKINSgugHyXkmF6nQxHXFxlWTZmGU5YccI
 ::fBE1pAF6MU+EWH3eyHYiKQ1VRQi+HmK1D7gd7+3S29WOrF4JVe4zeZvS1bqxJukf71bYd58i33dbn84FGFZRcAG/bwM4lXlLuGCKINSgugHyXkmF6nQzFGtwhlzUgygwZcEmmMIXsw==
-<<<<<<< HEAD
 ::fBE1pAF6MU+EWH3eyHYiKQ1VRQi+HmK1D7gd7+3S29WOrF4JVe4zeZvS1bqxJukf71bYd58i33dbn84FGFZRcAG/bwM4lXlLuGCKINSgugHyXkmF6nQ2Em99yWHRmEs=
-=======
->>>>>>> 2e815330ab7efa63bae42e03cfa1e442b8f9bb53
 ::fBE1pAF6MU+EWH3eyHYiKQ1VRQi+HmK1D7gd7+3S29WOrF4JVe4zeZvS1bqxJukf71bYd58i33dbn84FGFZRcAG/bwM4lXlLuGCKINSgugHyXkmF6nQ9Gmx6yWHRmEs=
 ::YAwzoRdxOk+EWAjk
 ::fBw5plQjdCuDJG2W9VQxIRdobg2NNWa7AbA13Nfy4fmTo0ERVfY2d4Hk3L2CJfMv6EzrfJss0X9TjIYFAghMfx6nUhg9p2pNoXe5PsSTvUHoSUfp
@@ -79,7 +76,6 @@ del %SCRIPT%
 rem makes shortcuts in start menu
 mkdir "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT"
 
-<<<<<<< HEAD
 @echo off
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
@@ -97,14 +93,6 @@ echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
 echo sLinkFile = "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT\Workspace.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\Users\%USERNAME%\BioImageIT\workspace.bat" >> %SCRIPT%
-=======
-@echo off
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT\BioImageIT.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\Users\%USERNAME%\BioImageIT\BioImageIT.bat" >> %SCRIPT%
->>>>>>> 2e815330ab7efa63bae42e03cfa1e442b8f9bb53
 echo oLink.Save >> %SCRIPT%
 cscript /nologo %SCRIPT%
 del %SCRIPT%
@@ -113,15 +101,9 @@ del %SCRIPT%
 @echo off
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-<<<<<<< HEAD
 echo sLinkFile = "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT\Imagej.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\Users\%USERNAME%\BioImageIT\Fiji.app\ImageJ-win64.exe" >> %SCRIPT%
-=======
-echo sLinkFile = "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT\Workspace.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\Users\%USERNAME%\BioImageIT\workspace.bat" >> %SCRIPT%
->>>>>>> 2e815330ab7efa63bae42e03cfa1e442b8f9bb53
 echo oLink.Save >> %SCRIPT%
 cscript /nologo %SCRIPT%
 del %SCRIPT%
