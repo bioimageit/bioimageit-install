@@ -1,9 +1,9 @@
 rem mkdir "C:\Users\%USERNAME%\Programes_bioimageIT"
 
 rem installation Miniconda
-if not exist "C:\Users\%USERNAME%\BioimageIT_installation_files\Miniconda3\condabin\conda.bat" curl https://repo.anaconda.com/miniconda/Miniconda3-py39_4.10.3-Windows-x86_64.exe --output miniconda_installer.exe
-if not exist "C:\Users\%USERNAME%\BioimageIT_installation_files\Miniconda3\condabin\conda.bat" start /wait "" miniconda_installer.exe /InstallationType=JustMe /RegisterPython=0 /S /D=%UserProfile%\BioimageIT_installation_files\Miniconda3
-if exist "C:\Users\%USERNAME%\BioimageIT_installation_files\Miniconda3\condabin\conda.bat" echo Miniconda already installed
+if not exist "C:\Users\%USERNAME%\BioImageIT\Miniconda3\condabin\conda.bat" curl https://repo.anaconda.com/miniconda/Miniconda3-py39_4.10.3-Windows-x86_64.exe --output miniconda_installer.exe
+if not exist "C:\Users\%USERNAME%\BioImageIT\Miniconda3\condabin\conda.bat" start /wait "" miniconda_installer.exe /InstallationType=JustMe /RegisterPython=0 /S /D=%UserProfile%\BioImageIT\Miniconda3
+if exist "C:\Users\%USERNAME%\BioImageIT\Miniconda3\condabin\conda.bat" echo Miniconda already installed
 	
 if exist miniconda_installer.exe del miniconda_installer.exe	
 
@@ -19,7 +19,7 @@ rem cd %BASEDIR%
 
 
 
-set conda_path="C:\Users\%USERNAME%\BioimageIT_installation_files\Miniconda3\condabin\conda.bat"
+set conda_path="C:\Users\%USERNAME%\BioImageIT\Miniconda3\condabin\conda.bat"
 
 call %conda_path% upgrade conda -y
 call %conda_path% config --add channels conda-forge

@@ -1,5 +1,5 @@
 set in_destination_dir="."
-set in_backend="CONDA_DOCKER"
+set in_backend="CONDA"
 
 REM check inputs
 echo "destination dir:" %in_destination_dir%
@@ -12,6 +12,7 @@ rem call .bioimageit-env\Scripts\activate
 
 git clone https://github.com/bioimageit/bioimageit_core.git
 git clone https://github.com/bioimageit/bioimageit_gui.git
+git clone https://github.com/bioimageit/bioimageit_formats.git
 git clone https://github.com/bioimageit/bioimageit_viewer.git
 git clone https://github.com/bioimageit/bioimageit-toolboxes.git
 git clone https://github.com/bioimageit/bioimageit-package.git
@@ -27,17 +28,20 @@ copy .\bioimageit-toolboxes\formats.json .\formats.json
 REM rd /s /q .\bioimageit-toolboxes
 
 REM create shortcuts
-copy .\bioimageit-package\windows\data_management.bat .\data_management.bat
-copy .\bioimageit-package\windows\data_processing.bat .\data_processing.bat
+copy .\bioimageit-package\windows\BioImageIT.bat .\BioImageIT.bat
+copy .\bioimageit-package\windows\BioImageIT-Browser.bat .\BioImageIT-Browser.bat
+copy .\bioimageit-package\windows\BioImageIT-Toolboxes.bat .\BioImageIT-Toolboxes.bat
+copy .\bioimageit-package\windows\BioImageIT-Runner.bat .\BioImageIT-Runner.bat
+copy .\bioimageit-package\windows\BioImageIT-Viewer.bat .\BioImageIT-Viewer.bat
 copy .\bioimageit-package\windows\jupyter.bat .\jupyter.bat
-copy .\bioimageit-package\windows\runnerapp.bat .\runnerapp.bat
-copy .\bioimageit-package\windows\viewer.bat .\viewer.bat
+copy .\bioimageit-package\windows\workspace.bat .\workspace.bat
 
 
-REM userdata
-mkdir userdata
+REM workspace
+mkdir workspace
 
 REM install and config packages
+pip install .\bioimageit_formats
 pip install .\bioimageit_core
 pip install .\bioimageit_gui
 pip install .\bioimageit_viewer
