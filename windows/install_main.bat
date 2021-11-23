@@ -129,4 +129,7 @@ del "C:\Users\%USERNAME%\BioImageIT\install_conda_docker.bat"
 del "C:\Users\%USERNAME%\BioImageIT\install_aftergit.bat"
 
 
+xcopy "C:\Users\%USERNAME%\BioImageIT\toolboxes\tools\fiji_utils" "C:\Users\%USERNAME%\BioImageIT\Fiji.app\macros" 
+
+
 pause

@@ -26,7 +26,7 @@
 ::ZQ0/vhVqMQ3MEVWAtB9wSA==
 ::Zg8zqx1/OA3MEVWAtB9wSA==
 ::dhA7pRFwIByZRRnk
-::Zh4grVQjdCuDJG2W9VQxIRdobg2NNWa7AbA13Nfy4fmTo0ERVfY2d4Hk3L2CJfMv6EzrfJss0X9TjIYFAghMfx6nUhg9p2pNoXe5IsmVvRz1S0SF2Uk5FGx5hmTVhT91Zctt+g==
+::Zh4grVQjdCyDJGyX8VAjFDV7YkSjGEaTKIk45+vu4u+Jtl4hduswcYLa3bGnFN8a5FbwdJoh125Tl8UzChJUewGXbAY7oGNDsWGMI4qVvRz1S0SF2lw5FWF7kHDsmSUybsB8m88P7CK380TynqIV2GyxW7ELdQ==
 ::YB416Ek+Zm8=
 ::
 ::
@@ -37,8 +37,7 @@ pause
 
 rmdir /s /q "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT"
 
-del "C:\Users\%USERNAME%\Desktop\BioimageIT_management.lnk"
-del "C:\Users\%USERNAME%\Desktop\BioimageIT_processing.lnk"
+del "C:\Users\%USERNAME%\Desktop\BioimageIT.lnk"
 
 
 rem DONE !
