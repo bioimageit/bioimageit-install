@@ -114,5 +114,5 @@ cp  bioimageit.desktop /home/leom/.local/share/applications/BioImageIT.desktop
 cd $installdir
 rm bioimageit.desktop
 
-curl https://raw.githubusercontent.com/bioimageit/bioimageit-install/download_link/windows/icon.ico icon.ico
+curl https://raw.githubusercontent.com/bioimageit/bioimageit-install/download_link/windows/icon.ico -o icon.ico
 
