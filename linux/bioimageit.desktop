@@ -3,8 +3,6 @@
 Version=1.0
 Terminal=false
 Type=Application
-Name=Stadia
-Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app-id=pnkcfpnngfokcnnijgkllghjlhkailce
-Icon=chrome-pnkcfpnngfokcnnijgkllghjlhkailce-Default
-StartupWMClass=crx_pnkcfpnngfokcnnijgkllghjlhkailce
+Name=BioImageIT
+Exec=/home/leom/BioImageIT/BioImageIT.sh
 OnlyShowIn=Old;
