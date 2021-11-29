@@ -103,3 +103,14 @@ curl https://downloads.imagej.net/fiji/latest/fiji-linux64.zip -o Fiji.zip
 unzip Fiji.zip
 rm Fiji.zip
 
+
+
+##################### Shortcut ########################
+cd $installdir
+
+curl https://raw.githubusercontent.com/bioimageit/bioimageit-install/download_link/linux/bioimageit.desktop -o bioimageit.desktop
+cp  bioimageit.desktop /home/leom/.local/share/applications/BioImageIT.desktop
+
+cd $installdir
+rm bioimageit.desktop
+

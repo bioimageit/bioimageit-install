@@ -1,8 +1,8 @@
 #!/usr/bin/env xdg-open
 [Desktop Entry]
 Version=1.0
-Terminal=false
+Terminal=true
 Type=Application
 Name=BioImageIT
-Exec=/home/leom/BioImageIT/BioImageIT.sh
-OnlyShowIn=Old;
+Exec=sh /home/leom/BioImageIT/BioImageIT.sh
+Icon=https://raw.githubusercontent.com/bioimageit/bioimageit-install/download_link/windows/icon.ico
