@@ -97,8 +97,7 @@ setup_bioimageit $installdir $python_path $pip_path $USER "CONDA"
 
 
 ###################### FIJI ###########################
-cd ~
-cd BioImageIT
+cd $installdir
 
 curl https://downloads.imagej.net/fiji/latest/fiji-linux64.zip -o Fiji.zip
 unzip Fiji.zip
