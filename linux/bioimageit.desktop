@@ -5,4 +5,4 @@ Terminal=true
 Type=Application
 Name=BioImageIT
 Exec=sh /home/leom/BioImageIT/BioImageIT.sh
-Icon=https://raw.githubusercontent.com/bioimageit/bioimageit-install/download_link/windows/icon.ico
+Icon=/home/leom/BioImageIT/icon.ico
