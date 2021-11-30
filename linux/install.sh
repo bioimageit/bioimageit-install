@@ -103,7 +103,7 @@ curl https://downloads.imagej.net/fiji/latest/fiji-linux64.zip -o Fiji.zip
 unzip Fiji.zip
 rm Fiji.zip
 
-
+cp -a ./toolboxes/tools/fiji_utils/. ./Fiji.app/macros
 
 ##################### Shortcut ########################
 cd $installdir
