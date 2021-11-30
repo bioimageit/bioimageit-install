@@ -109,7 +109,7 @@ cp -a ./toolboxes/tools/fiji_utils/. ./Fiji.app/macros
 cd $installdir
 
 curl https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/linux/bioimageit.desktop -o bioimageit.desktop
-cp  bioimageit.desktop /home/leom/.local/share/applications/BioImageIT.desktop
+cp  bioimageit.desktop /home/$USER/.local/share/applications/BioImageIT.desktop
 
 cd $installdir
 rm bioimageit.desktop
