@@ -1,5 +1,5 @@
 # Bat to exe conversion instructions
-Download "Bat To Exe Converter" with the following link : https://urlz.fr/gJHw ,
+Download "Bat To Exe Converter" with the following link : https://bat-to-exe-converter-x64.en.softonic.com/ ,
 
 Install it,
 
