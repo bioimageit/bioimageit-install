@@ -91,3 +91,13 @@ $conda_bin create -y --name bioimageit python=3.9
 # clone and setup BioImageIT
 setup_bioimageit $installdir $python_path $pip_path $USER "CONDA" 
 
+
+###################### FIJI ###########################
+cd $installdir
+
+curl https://downloads.imagej.net/fiji/latest/fiji-macosx.zip -o Fiji.zip
+unzip Fiji.zip
+rm Fiji.zip
+
+cp -a ./toolboxes/tools/fiji_utils/. ./Fiji.app/macros
+
