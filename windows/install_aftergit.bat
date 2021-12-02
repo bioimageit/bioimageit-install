@@ -45,5 +45,6 @@ pip install .\bioimageit_formats
 pip install .\bioimageit_core
 pip install .\bioimageit_gui
 pip install .\bioimageit_viewer
+pip install jupyter -y
 python bioimageit_core\config.py "%USERNAME%" %in_backend%
 python bioimageit_gui\config.py 
