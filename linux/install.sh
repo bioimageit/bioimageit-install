@@ -115,7 +115,7 @@ cp -a ./toolboxes/tools/fiji_utils/. ./Fiji.app/macros
 ##################### Shortcut ########################
 cd $installdir
 
-curl https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/linux/bioimageit.desktop -o bioimageit.desktop
+wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/linux/bioimageit.desktop -o bioimageit.desktop
 cp  bioimageit.desktop /home/$USER/.local/share/applications/BioImageIT.desktop
 
 cd $installdir
