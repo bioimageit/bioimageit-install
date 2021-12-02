@@ -89,6 +89,12 @@ install_miniconda $installdir
 # create bioimageit env
 $conda_bin create -y --name bioimageit python=3.9
 
+# activate bioimageit
+$conda_bin activate bioimageit
+
+# install git
+$conda_bin install git -y
+
 # clone and setup BioImageIT
 setup_bioimageit $installdir $python_path $pip_path $USER "CONDA" 
 
@@ -100,7 +106,7 @@ setup_bioimageit $installdir $python_path $pip_path $USER "CONDA"
 ###################### FIJI ###########################
 cd $installdir
 
-curl https://downloads.imagej.net/fiji/latest/fiji-linux64.zip -o Fiji.zip
+wget https://downloads.imagej.net/fiji/latest/fiji-linux64.zip -o Fiji.zip
 unzip Fiji.zip
 rm Fiji.zip
 
