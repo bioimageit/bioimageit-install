@@ -61,7 +61,7 @@ setup_bioimageit(){
     $pip_path install ./bioimageit_core
     $pip_path install ./bioimageit_gui
     $pip_path install ./bioimageit_viewer
-	$pip_path install jupyter -y
+    $pip_path install jupyter
     $python_path bioimageit_core/config.py "${in_username}" "${in_backend}"
     $python_path bioimageit_gui/config.py 
 }
