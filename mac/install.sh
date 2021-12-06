@@ -48,6 +48,7 @@ setup_bioimageit(){
     cp bioimageit-package/mac/BioImageIT-Viewer.sh BioImageIT-Viewer.sh
 
     chmod +x BioImageIT.sh
+    chmod +x BioImageIT.command
     chmod +x BioImageIT-Browser.sh
     chmod +x BioImageIT-Toolboxes.sh
     chmod +x jupyter.sh
