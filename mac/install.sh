@@ -21,7 +21,7 @@ setup_bioimageit(){
     in_username=$4
     in_backend=$5
 
-    cd $in_destination_dir
+    cd $in_destination_dir 
 
     git clone https://github.com/bioimageit/bioimageit_formats.git
     git clone https://github.com/bioimageit/bioimageit_core.git
