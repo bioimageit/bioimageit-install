@@ -40,6 +40,7 @@ setup_bioimageit(){
 
     # create shortcuts
     cp bioimageit-package/mac/BioImageIT.sh BioImageIT.sh
+    cp bioimageit-package/mac/BioImageIT.sh BioImageIT.command
     cp bioimageit-package/mac/BioImageIT-Browser.sh BioImageIT-Browser.sh
     cp bioimageit-package/mac/BioImageIT-Toolboxes.sh BioImageIT-Toolboxes.sh
     cp bioimageit-package/mac/jupyter.sh jupyter.sh
