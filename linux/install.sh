@@ -89,6 +89,7 @@ install_miniconda $installdir
 
 # install git
 $conda_bin install git -y
+$conda install pyside2 -y
 
 # clone and setup BioImageIT
 setup_bioimageit $installdir $python_path $pip_path $USER "CONDA" 
