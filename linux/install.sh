@@ -117,5 +117,5 @@ cp  bioimageit.desktop /home/$USER/.local/share/applications/BioImageIT.desktop
 cd $installdir
 rm bioimageit.desktop
 
-wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/download_link/windows/icon.ico
+wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/windows/icon.ico
 
