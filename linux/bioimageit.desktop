@@ -4,5 +4,5 @@ Version=1.0
 Terminal=true
 Type=Application
 Name=BioImageIT
-Exec=sh /home/leom/BioImageIT/BioImageIT.sh
-Icon=/home/leom/BioImageIT/icon.ico
+Exec=sh /home/$USER/BioImageIT/BioImageIT.sh
+Icon=/home/$USER/BioImageIT/icon.ico
