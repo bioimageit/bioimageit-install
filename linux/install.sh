@@ -23,7 +23,7 @@ setup_bioimageit(){
 
     cd $in_destination_dir
 
-    git clone https://github.com/bioimageit/bioimageit_formats.git --depth 1 --branch v0.0.2
+    git clone --depth 1 --branch v0.0.2 https://github.com/bioimageit/bioimageit_formats.git
     git clone https://github.com/bioimageit/bioimageit_core.git --depth 1 --branch v0.0.2
     git clone https://github.com/bioimageit/bioimageit_gui.git --depth 1 --branch v0.0.2
     git clone https://github.com/bioimageit/bioimageit_viewer.git --depth 1 --branch v0.0.2
@@ -89,7 +89,7 @@ install_miniconda $installdir
 
 # install git
 $conda_bin install git -y
-$conda install pyside2 -y
+$conda_bin install -c conda-forge pyside2 -y
 
 # clone and setup BioImageIT
 setup_bioimageit $installdir $python_path $pip_path $USER "CONDA" 
