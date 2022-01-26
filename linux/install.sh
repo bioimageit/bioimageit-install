@@ -75,8 +75,8 @@ userdir="/home/$USER"
 installdir="$userdir/BioImageIT"
 conda_bin="$installdir/miniconda3/condabin/conda"
 conda_sh="$installdir/miniconda3/etc/profile.d/conda.sh"
-python_path="$installdir/miniconda3/envs/bioimageit/bin/python"
-pip_path="$installdir/miniconda3/envs/bioimageit/bin/pip"
+python_path="$installdir/miniconda3/bin/python"
+pip_path="$installdir/miniconda3/bin/pip"
 
 # create the install directory
 cd $userdir
@@ -86,14 +86,10 @@ cd "$installdir"
 # install Local Miniconda
 install_miniconda $installdir
 
-# create bioimageit env
-$conda_bin create -y --name bioimageit python=3.9
-
-# activate bioimageit
-$conda_bin activate bioimageit
 
 # install git
 $conda_bin install git -y
+$conda install pyside2 -y
 
 # clone and setup BioImageIT
 setup_bioimageit $installdir $python_path $pip_path $USER "CONDA" 
@@ -106,20 +102,20 @@ setup_bioimageit $installdir $python_path $pip_path $USER "CONDA"
 ###################### FIJI ###########################
 cd $installdir
 
-wget https://downloads.imagej.net/fiji/latest/fiji-linux64.zip -o Fiji.zip
-unzip Fiji.zip
-rm Fiji.zip
+wget https://downloads.imagej.net/fiji/latest/fiji-linux64.zip
+unzip fiji-linux64.zip
+rm fiji-linux64.zip
 
 cp -a ./toolboxes/tools/fiji_utils/. ./Fiji.app/macros
 
 ##################### Shortcut ########################
 cd $installdir
 
-wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/linux/bioimageit.desktop -o bioimageit.desktop
+wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/linux/bioimageit.desktop
 cp  bioimageit.desktop /home/$USER/.local/share/applications/BioImageIT.desktop
 
 cd $installdir
 rm bioimageit.desktop
 
-curl https://raw.githubusercontent.com/bioimageit/bioimageit-install/download_link/windows/icon.ico -o icon.ico
+wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/windows/icon.ico
 
