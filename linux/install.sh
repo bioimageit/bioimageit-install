@@ -145,6 +145,8 @@ cd $installdir
 wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/linux/bioimageit.desktop
 cp  bioimageit.desktop /home/$USER/.local/share/applications/BioImageIT.desktop
 
+sed -i 's/$USER/'$USER'/g' /home/$USER/.local/share/applications/BioImageIT.desktop
+
 cd $installdir
 rm bioimageit.desktop
 
