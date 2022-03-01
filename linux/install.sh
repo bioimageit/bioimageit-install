@@ -23,13 +23,43 @@ setup_bioimageit(){
 
     cd $in_destination_dir
 
-    git clone https://github.com/bioimageit/bioimageit_formats.git --depth 1 --branch v0.0.2
-    git clone https://github.com/bioimageit/bioimageit_core.git --depth 1 --branch v0.0.2
-    git clone https://github.com/bioimageit/bioimageit_gui.git --depth 1 --branch v0.0.2
-    git clone https://github.com/bioimageit/bioimageit_viewer.git --depth 1 --branch v0.0.2
-    git clone https://github.com/bioimageit/bioimageit-toolboxes.git
-    git clone https://github.com/bioimageit/bioimageit-package.git
+    #git clone --depth 1 --branch v0.0.2 https://github.com/bioimageit/bioimageit_formats.git
+    #git clone https://github.com/bioimageit/bioimageit_core.git --depth 1 --branch v0.0.2
+    #git clone https://github.com/bioimageit/bioimageit_gui.git --depth 1 --branch v0.0.2
+    #git clone https://github.com/bioimageit/bioimageit_viewer.git --depth 1 --branch v0.0.2
+    #git clone https://github.com/bioimageit/bioimageit-toolboxes.git
+    #git clone https://github.com/bioimageit/bioimageit-package.git
 
+	wget https://github.com/bioimageit/bioimageit-package/archive/refs/heads/main.zip
+	unzip ./main.zip
+	rm ./main.zip
+	mv ./bioimageit-package-main ./bioimageit-package
+	
+	wget https://github.com/bioimageit/bioimageit_formats/archive/refs/tags/v0.0.2.zip
+	unzip ./v0.0.2.zip
+	rm ./v0.0.2.zip
+	mv ./bioimageit_formats-0.0.2 ./bioimageit_formats
+	
+	wget https://github.com/bioimageit/bioimageit_core/archive/refs/tags/v0.0.2.zip
+	unzip ./v0.0.2.zip
+	rm ./v0.0.2.zip
+	mv ./bioimageit_core-0.0.2 ./bioimageit_core
+	
+	wget https://github.com/bioimageit/bioimageit_gui/archive/refs/tags/v0.0.2.zip
+	unzip ./v0.0.2.zip
+	rm ./v0.0.2.zip
+	mv ./bioimageit_gui-0.0.2 ./bioimageit_gui
+	
+	wget https://github.com/bioimageit/bioimageit_viewer/archive/refs/tags/v0.0.2.zip
+	unzip ./v0.0.2.zip
+	rm ./v0.0.2.zip
+	mv ./bioimageit_viewer-0.0.2 ./bioimageit_viewer
+	
+	wget https://github.com/bioimageit/bioimageit-toolboxes/archive/refs/heads/main.zip
+	unzip ./main.zip
+	rm ./main.zip
+	mv ./bioimageit-toolboxes-main ./bioimageit-toolboxes
+    
     # create toolboxes database
     mkdir toolboxes
     mkdir toolboxes/thumbs/
@@ -89,7 +119,8 @@ install_miniconda $installdir
 
 # install git
 $conda_bin install git -y
-$conda install pyside2 -y
+$conda_bin install -c conda-forge pyside2 -y
+$conda_bin install qt -y
 
 # clone and setup BioImageIT
 setup_bioimageit $installdir $python_path $pip_path $USER "CONDA" 
@@ -113,6 +144,8 @@ cd $installdir
 
 wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/linux/bioimageit.desktop
 cp  bioimageit.desktop /home/$USER/.local/share/applications/BioImageIT.desktop
+
+sed -i 's/$USER/'$USER'/g' /home/$USER/.local/share/applications/BioImageIT.desktop
 
 cd $installdir
 rm bioimageit.desktop
