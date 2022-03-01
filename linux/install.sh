@@ -139,16 +139,20 @@ rm fiji-linux64.zip
 
 cp -a ./toolboxes/tools/fiji_utils/. ./Fiji.app/macros
 
-##################### Shortcut ########################
+##################### Shortcuts #######################
 cd $installdir
 
 wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/linux/bioimageit.desktop
+wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/linux/BioImageIT-Workspace.desktop
 cp  bioimageit.desktop /home/$USER/.local/share/applications/BioImageIT.desktop
+cp BioImageIT-Workspace.desktop /home/$USER/.local/share/applications/BioImageIT-Workspace.desktop
 
 sed -i 's/$USER/'$USER'/g' /home/$USER/.local/share/applications/BioImageIT.desktop
+sed -i 's/$USER/'$USER'/g' /home/$USER/.local/share/applications/BioImageIT-Workspace.desktop
 
 cd $installdir
 rm bioimageit.desktop
+rm BioImageIT-Workspace.desktop
 
 wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/windows/icon.ico
-
+wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/linux/Workspace.ico
