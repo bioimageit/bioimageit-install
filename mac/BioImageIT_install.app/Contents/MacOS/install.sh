@@ -46,7 +46,8 @@ setup_bioimageit(){
     cp bioimageit-package/mac/jupyter.sh jupyter.sh
     cp bioimageit-package/mac/BioImageIT-Runner.sh BioImageIT-Runner.sh
     cp bioimageit-package/mac/BioImageIT-Viewer.sh BioImageIT-Viewer.sh
-    cp -r bioimageit-package/mac/BioImageIT.app/ /Users/$USER/Applications/
+    cp -r bioimageit-package/mac/BioImageIT.app/ /Users/$USER/Applications/BioImageIT.app/
+    cp -r "bioimageit-package/mac/BioImageIT Workspace.app/" "/Users/$USER/Applications/BioImageIT Workspace.app/"
 
     chmod +x BioImageIT.sh
     chmod +x BioImageIT.command
