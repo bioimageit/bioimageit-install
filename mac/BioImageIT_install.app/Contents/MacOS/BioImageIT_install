@@ -1,0 +1,4 @@
+#!/bin/bash
+
+scriptPath=$(dirname "$0")'/install.sh'
+osascript -e 'tell app "Terminal" to do script "\"'"$scriptPath"'\""'

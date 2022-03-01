@@ -46,6 +46,7 @@ setup_bioimageit(){
     cp bioimageit-package/mac/jupyter.sh jupyter.sh
     cp bioimageit-package/mac/BioImageIT-Runner.sh BioImageIT-Runner.sh
     cp bioimageit-package/mac/BioImageIT-Viewer.sh BioImageIT-Viewer.sh
+    cp -r bioimageit-package/mac/BioImageIT.app/ /Users/$USER/Applications/
 
     chmod +x BioImageIT.sh
     chmod +x BioImageIT.command
@@ -103,4 +104,3 @@ unzip Fiji.zip
 rm Fiji.zip
 
 cp -a ./toolboxes/tools/fiji_utils/. ./Fiji.app/macros
-
