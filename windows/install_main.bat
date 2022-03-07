@@ -128,8 +128,8 @@ del "C:\Users\%USERNAME%\BioImageIT\install.bat"
 del "C:\Users\%USERNAME%\BioImageIT\install_conda_docker.bat"
 del "C:\Users\%USERNAME%\BioImageIT\install_aftergit.bat"
 del "C:\Users\%USERNAME%\BioImageIT\install_fiji.bat"
-rmdir "C:\Users\%USERNAME%\BioImageIT\bioimageit-package"
-rmdir "C:\Users\%USERNAME%\BioImageIT\bioimageit-toolboxes"
+rmdir /s "C:\Users\%USERNAME%\BioImageIT\bioimageit-package"
+rmdir /s "C:\Users\%USERNAME%\BioImageIT\bioimageit-toolboxes"
 
 
 xcopy "C:\Users\%USERNAME%\BioImageIT\toolboxes\tools\fiji_utils" "C:\Users\%USERNAME%\BioImageIT\Fiji.app\macros" 
