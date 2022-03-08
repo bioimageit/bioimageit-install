@@ -31,7 +31,7 @@
 ::ZQ0/vhVqMQ3MEVWAtB9wSA==
 ::Zg8zqx1/OA3MEVWAtB9wSA==
 ::dhA7pRFwIByZRRnk
-::Zh4grVQjdCyDJGyX8VAjFBdZTRGQJVeeCbYJ5e31+/m7gEQSfe8+f4ry7vmJKfQv6EzrfJss0X9TjIYFAghMfx6nUhg9p2pNoXe5Fc6TugLgTU2g0nQ5FXZghm/ciTl1Zctt+g==
+::Zh4grVQjdCyDJGyX8VAjFBdZTRGQJVeeCaIS5Of66/m7gEQSXe8+f4ry7ouHLvMH60nocIRj02Jf+A==
 ::YB416Ek+Zm8=
 ::
 ::
@@ -122,14 +122,15 @@ cscript /nologo %SCRIPT%
 del %SCRIPT%
 
 
+rem Remove useless files & folders
 cd "C:\Users\%USERNAME%\BioImageIT"
 del /f install_main.bat
 del /f install.bat
 del /f install_conda_docker.bat
 del /f install_aftergit.bat
 del /f install_fiji.bat
-rmdir /s bioimageit-package
-rmdir /s bioimageit-toolboxes
+rmdir /s /q bioimageit-package
+rmdir /s /q bioimageit-toolboxes
 
 
 xcopy "C:\Users\%USERNAME%\BioImageIT\toolboxes\tools\fiji_utils" "C:\Users\%USERNAME%\BioImageIT\Fiji.app\macros" 
