@@ -123,13 +123,13 @@ del %SCRIPT%
 
 
 cd "C:\Users\%USERNAME%\BioImageIT"
-del "C:\Users\%USERNAME%\BioImageIT\install_main.bat"
-del "C:\Users\%USERNAME%\BioImageIT\install.bat"
-del "C:\Users\%USERNAME%\BioImageIT\install_conda_docker.bat"
-del "C:\Users\%USERNAME%\BioImageIT\install_aftergit.bat"
-del "C:\Users\%USERNAME%\BioImageIT\install_fiji.bat"
-rmdir /s "C:\Users\%USERNAME%\BioImageIT\bioimageit-package"
-rmdir /s "C:\Users\%USERNAME%\BioImageIT\bioimageit-toolboxes"
+del /f install_main.bat
+del /f install.bat
+del /f install_conda_docker.bat
+del /f install_aftergit.bat
+del /f install_fiji.bat
+rmdir /s bioimageit-package
+rmdir /s bioimageit-toolboxes
 
 
 xcopy "C:\Users\%USERNAME%\BioImageIT\toolboxes\tools\fiji_utils" "C:\Users\%USERNAME%\BioImageIT\Fiji.app\macros" 
