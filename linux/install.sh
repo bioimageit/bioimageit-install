@@ -75,11 +75,7 @@ setup_bioimageit(){
 
     # create shortcuts
     cp bioimageit-package/linux/BioImageIT.sh BioImageIT.sh
-    cp bioimageit-package/linux/BioImageIT-Browser.sh BioImageIT-Browser.sh
-    cp bioimageit-package/linux/BioImageIT-Toolboxes.sh BioImageIT-Toolboxes.sh
     cp bioimageit-package/linux/jupyter.sh jupyter.sh
-    cp bioimageit-package/linux/BioImageIT-Runner.sh BioImageIT-Runner.sh
-    cp bioimageit-package/linux/BioImageIT-Viewer.sh BioImageIT-Viewer.sh
 
     chmod +x BioImageIT.sh
     chmod +x BioImageIT-Browser.sh
