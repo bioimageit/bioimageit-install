@@ -30,40 +30,45 @@ setup_bioimageit(){
     #git clone https://github.com/bioimageit/bioimageit-toolboxes.git
     #git clone https://github.com/bioimageit/bioimageit-package.git
 
-	wget https://github.com/bioimageit/bioimageit_framework/archive/refs/heads/main.zip
+    wget https://github.com/bioimageit/bioimageit_framework/archive/refs/heads/main.zip
     unzip ./main.unzip
     rm ./main.zip
-    mv ./bioimageit_framework-0.0.2 ./bioimageit_framework
+    mv ./bioimageit_framework-main ./bioimageit_framework
 
     wget https://github.com/bioimageit/bioimageit-package/archive/refs/heads/main.zip
-	unzip ./main.zip
-	rm ./main.zip
-	mv ./bioimageit-package-main ./bioimageit-package
+    unzip ./main.zip
+    rm ./main.zip
+    mv ./bioimageit-package-main ./bioimageit-package
 	
-	wget https://github.com/bioimageit/bioimageit_formats/archive/refs/tags/v0.0.2.zip
-	unzip ./v0.0.2.zip
-	rm ./v0.0.2.zip
-	mv ./bioimageit_formats-0.0.2 ./bioimageit_formats
+    wget https://github.com/bioimageit/bioimageit_formats/archive/refs/heads/main.zip
+    unzip ./main.zip
+    rm ./main.zip
+    mv ./bioimageit_formats-main ./bioimageit_formats
 	
-	wget https://github.com/bioimageit/bioimageit_core/archive/refs/tags/v0.0.2.zip
-	unzip ./v0.0.2.zip
-	rm ./v0.0.2.zip
-	mv ./bioimageit_core-0.0.2 ./bioimageit_core
+    wget https://github.com/bioimageit/bioimageit_core/archive/refs/heads/main.zip
+    unzip ./main.zip
+    rm ./main.zip
+    mv ./bioimageit_core-main ./bioimageit_core
 	
-	wget https://github.com/bioimageit/bioimageit_gui/archive/refs/tags/v0.0.2.zip
-	unzip ./v0.0.2.zip
-	rm ./v0.0.2.zip
-	mv ./bioimageit_gui-0.0.2 ./bioimageit_gui
+    wget https://github.com/bioimageit/bioimageit_gui/archive/refs/heads/main.zip
+    unzip ./main.zip
+    rm ./main.zip
+    mv ./bioimageit_gui-main ./bioimageit_gui
 	
-	wget https://github.com/bioimageit/bioimageit_viewer/archive/refs/tags/v0.0.2.zip
-	unzip ./v0.0.2.zip
-	rm ./v0.0.2.zip
-	mv ./bioimageit_viewer-0.0.2 ./bioimageit_viewer
+    wget https://github.com/bioimageit/bioimageit_viewer/archive/refs/heads/main.zip
+    unzip ./main.zip
+    rm ./main.zip
+    mv ./bioimageit_viewer-main ./bioimageit_viewer
 	
-	wget https://github.com/bioimageit/bioimageit-toolboxes/archive/refs/heads/main.zip
-	unzip ./main.zip
-	rm ./main.zip
-	mv ./bioimageit-toolboxes-main ./bioimageit-toolboxes
+    wget https://github.com/bioimageit/bioimageit-toolboxes/archive/refs/heads/main.zip
+    unzip ./main.zip
+    rm ./main.zip
+    mv ./bioimageit-toolboxes-main ./bioimageit-toolboxes
+    
+    wget https://github.com/bioimageit/bioimageit-notebooks/archive/refs/heads/main.zip
+    unzip ./main.zip
+    rm ./main.zip
+    mv ./bioimageit-notebooks-main ./bioimageit-notebooks
     
     # create toolboxes database
     mkdir toolboxes
@@ -75,11 +80,7 @@ setup_bioimageit(){
 
     # create shortcuts
     cp bioimageit-package/linux/BioImageIT.sh BioImageIT.sh
-    cp bioimageit-package/linux/BioImageIT-Browser.sh BioImageIT-Browser.sh
-    cp bioimageit-package/linux/BioImageIT-Toolboxes.sh BioImageIT-Toolboxes.sh
     cp bioimageit-package/linux/jupyter.sh jupyter.sh
-    cp bioimageit-package/linux/BioImageIT-Runner.sh BioImageIT-Runner.sh
-    cp bioimageit-package/linux/BioImageIT-Viewer.sh BioImageIT-Viewer.sh
 
     chmod +x BioImageIT.sh
     chmod +x BioImageIT-Browser.sh
@@ -93,6 +94,7 @@ setup_bioimageit(){
 
     # install and config packages
     $pip_path install ./bioimageit_formats
+    $pip_path install ./bioimageit_framework
     $pip_path install ./bioimageit_core
     $pip_path install ./bioimageit_gui
     $pip_path install ./bioimageit_viewer
