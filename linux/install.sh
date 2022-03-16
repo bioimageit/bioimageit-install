@@ -126,6 +126,7 @@ install_miniconda $installdir
 
 # install git
 $conda_bin install git -y
+$conda_bin install -c ome omero-py -y
 $conda_bin install -c conda-forge pyside2 -y
 $conda_bin install qt -y
 
