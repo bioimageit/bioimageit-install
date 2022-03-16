@@ -10,13 +10,15 @@ cd %in_destination_dir%
 rem %python_path% -m venv .bioimageit-env
 rem call .bioimageit-env\Scripts\activate
 
-git clone https://github.com/bioimageit/bioimageit_core.git --depth 1 --branch v0.0.2
-git clone https://github.com/bioimageit/bioimageit_gui.git --depth 1 --branch v0.0.2
-git clone https://github.com/bioimageit/bioimageit_formats.git --depth 1 --branch v0.0.2
-git clone https://github.com/bioimageit/bioimageit_viewer.git --depth 1 --branch v0.0.2
+git clone https://github.com/bioimageit/bioimageit_framework.git
+git clone https://github.com/bioimageit/bioimageit_core.git
+git clone https://github.com/bioimageit/bioimageit_gui.git
+git clone https://github.com/bioimageit/bioimageit_formats.git
+git clone https://github.com/bioimageit/bioimageit_viewer.git
 git clone https://github.com/bioimageit/bioimageit-toolboxes.git
 git clone https://github.com/bioimageit/bioimageit-package.git
 git clone https://github.com/bioimageit/bioimageit-install.git
+git clone https://github.com/bioimageit/bioimageit-notebooks.git
 
 REM create toolboxes database
 mkdir toolboxes
@@ -42,6 +44,7 @@ mkdir workspace
 
 REM install and config packages
 pip install .\bioimageit_formats
+pip install .\bioimageit_framework
 pip install .\bioimageit_core
 pip install .\bioimageit_gui
 pip install .\bioimageit_viewer

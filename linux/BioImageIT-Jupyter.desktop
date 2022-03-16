@@ -1,0 +1,8 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=BioImageIT-Jupyter
+Exec=sh /home/$USER/BioImageIT/jupyter.sh
+Icon=/home/$USER/BioImageIT/jupyter.ico
