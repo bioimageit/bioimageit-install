@@ -19,8 +19,8 @@
 ::dAsiuh18IRvcCxnZtBJQ
 ::cRYluBh/LU+EWAnk
 ::YxY4rhs+aU+IeA==
-::cxY6rQJ7JhzQF1fEqQJgZko0
-::ZQ05rAF9IBncCkqN+0xwdVsEAlXi
+::cxY6rQJ7JhzQF1fEqQJgZksaHmQ=
+::ZQ05rAF9IBncCkqN+0xwdVsEAlTMbgs=
 ::ZQ05rAF9IAHYFVzEqQISIRRdQQWFOUKORrwS+/z64+aCsC0=
 ::eg0/rx1wNQPfEVWB+kM9LVsJDGQ=
 ::fBEirQZwNQPfEVWB+kM9LVsJDGQ=
@@ -31,7 +31,7 @@
 ::ZQ0/vhVqMQ3MEVWAtB9wSA==
 ::Zg8zqx1/OA3MEVWAtB9wSA==
 ::dhA7pRFwIByZRRnk
-::Zh4grVQjdCyDJGyX8VAjFBdZTRGQJVeeCaIS5Of66/m7gEQSXe8+f4ry7ouHLvMH60nocIRj02Jf+A==
+::Zh4grVQjdCyDJGyX8VAjFBdZTRGQJVeeCbYJ5e31+/m7gEQSfe8+f4ry7vmJKfQv6EzrfJss0X9TjIYFAghMfx6nUhg9p2pNoXe5Fc6TugLgTU2g0nQ5FXZghm/ciTl1Zctt+g==
 ::YB416Ek+Zm8=
 ::
 ::
@@ -108,6 +108,16 @@ echo oLink.Save >> %SCRIPT%
 cscript /nologo %SCRIPT%
 del %SCRIPT%
 
+
+@echo off
+set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
+echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
+echo sLinkFile = "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT\Jupyter.lnk" >> %SCRIPT%
+echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
+echo oLink.TargetPath = "C:\Users\%USERNAME%\BioImageIT\jupyter.bat" >> %SCRIPT%
+echo oLink.Save >> %SCRIPT%
+cscript /nologo %SCRIPT%
+del %SCRIPT%
 
 
 rem start menu shortcut for uninstallaton
