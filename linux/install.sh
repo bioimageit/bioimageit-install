@@ -33,32 +33,32 @@ setup_bioimageit(){
     wget https://github.com/bioimageit/bioimageit_framework/archive/refs/heads/main.zip
     unzip ./main.unzip
     rm ./main.zip
-    mv ./bioimageit_framework-0.0.2 ./bioimageit_framework
+    mv ./bioimageit_framework-main ./bioimageit_framework
 
     wget https://github.com/bioimageit/bioimageit-package/archive/refs/heads/main.zip
     unzip ./main.zip
     rm ./main.zip
     mv ./bioimageit-package-main ./bioimageit-package
 	
-    wget https://github.com/bioimageit/bioimageit_formats/archive/refs/tags/v0.0.2.zip
-    unzip ./v0.0.2.zip
-    rm ./v0.0.2.zip
-    mv ./bioimageit_formats-0.0.2 ./bioimageit_formats
+    wget https://github.com/bioimageit/bioimageit_formats/archive/refs/heads/main.zip
+    unzip ./main.zip
+    rm ./main.zip
+    mv ./bioimageit_formats-main ./bioimageit_formats
 	
-    wget https://github.com/bioimageit/bioimageit_core/archive/refs/tags/v0.0.2.zip
-    unzip ./v0.0.2.zip
-    rm ./v0.0.2.zip
-    mv ./bioimageit_core-0.0.2 ./bioimageit_core
+    wget https://github.com/bioimageit/bioimageit_core/archive/refs/heads/main.zip
+    unzip ./main.zip
+    rm ./main.zip
+    mv ./bioimageit_core-main ./bioimageit_core
 	
-    wget https://github.com/bioimageit/bioimageit_gui/archive/refs/tags/v0.0.2.zip
-    unzip ./v0.0.2.zip
-    rm ./v0.0.2.zip
-    mv ./bioimageit_gui-0.0.2 ./bioimageit_gui
+    wget https://github.com/bioimageit/bioimageit_gui/archive/refs/heads/main.zip
+    unzip ./main.zip
+    rm ./main.zip
+    mv ./bioimageit_gui-main ./bioimageit_gui
 	
-    wget https://github.com/bioimageit/bioimageit_viewer/archive/refs/tags/v0.0.2.zip
-    unzip ./v0.0.2.zip
-    rm ./v0.0.2.zip
-    mv ./bioimageit_viewer-0.0.2 ./bioimageit_viewer
+    wget https://github.com/bioimageit/bioimageit_viewer/archive/refs/heads/main.zip
+    unzip ./main.zip
+    rm ./main.zip
+    mv ./bioimageit_viewer-main ./bioimageit_viewer
 	
     wget https://github.com/bioimageit/bioimageit-toolboxes/archive/refs/heads/main.zip
     unzip ./main.zip
