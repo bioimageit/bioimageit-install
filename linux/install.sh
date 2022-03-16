@@ -30,7 +30,12 @@ setup_bioimageit(){
     #git clone https://github.com/bioimageit/bioimageit-toolboxes.git
     #git clone https://github.com/bioimageit/bioimageit-package.git
 
-	wget https://github.com/bioimageit/bioimageit-package/archive/refs/heads/main.zip
+	wget https://github.com/bioimageit/bioimageit_framework/archive/refs/heads/main.zip
+    unzip ./main.unzip
+    rm ./main.zip
+    mv ./bioimageit_framework-0.0.2 ./bioimageit_framework
+
+    wget https://github.com/bioimageit/bioimageit-package/archive/refs/heads/main.zip
 	unzip ./main.zip
 	rm ./main.zip
 	mv ./bioimageit-package-main ./bioimageit-package
@@ -144,15 +149,20 @@ cd $installdir
 
 wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/linux/bioimageit.desktop
 wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/linux/BioImageIT-Workspace.desktop
+wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/linux/BioImageIT-Jupyter.desktop
 cp  bioimageit.desktop /home/$USER/.local/share/applications/BioImageIT.desktop
 cp BioImageIT-Workspace.desktop /home/$USER/.local/share/applications/BioImageIT-Workspace.desktop
+cp BioImageIT-Jupyter.desktop /home/$USER/.local/share/applications/BioImageIT-Jupyter.desktop
 
 sed -i 's/$USER/'$USER'/g' /home/$USER/.local/share/applications/BioImageIT.desktop
 sed -i 's/$USER/'$USER'/g' /home/$USER/.local/share/applications/BioImageIT-Workspace.desktop
+sed -i 's/$USER/'$USER'/g' /home/$USER/.local/share/applications/BioImageIT-Jupyter.desktop
 
 cd $installdir
 rm bioimageit.desktop
 rm BioImageIT-Workspace.desktop
+rm BioImageIT-Jupyter.desktop
 
 wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/windows/icon.ico
 wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/linux/Workspace.ico
+wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/linux/jupyter.ico
