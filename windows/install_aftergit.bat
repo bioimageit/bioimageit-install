@@ -10,6 +10,7 @@ cd %in_destination_dir%
 rem %python_path% -m venv .bioimageit-env
 rem call .bioimageit-env\Scripts\activate
 
+git clone https://github.com/bioimageit/bioimageit_framework.git
 git clone https://github.com/bioimageit/bioimageit_core.git --depth 1 --branch v0.0.2
 git clone https://github.com/bioimageit/bioimageit_gui.git --depth 1 --branch v0.0.2
 git clone https://github.com/bioimageit/bioimageit_formats.git --depth 1 --branch v0.0.2
