@@ -65,6 +65,11 @@ setup_bioimageit(){
     rm ./main.zip
     mv ./bioimageit-toolboxes-main ./bioimageit-toolboxes
     
+    wget https://github.com/bioimageit/bioimageit-notebooks/archive/refs/heads/main.zip
+    unzip ./main.zip
+    rm ./main.zip
+    mv ./bioimageit-notebooks-main ./bioimageit-notebooks
+    
     # create toolboxes database
     mkdir toolboxes
     mkdir toolboxes/thumbs/
