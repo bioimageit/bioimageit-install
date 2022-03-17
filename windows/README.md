@@ -1,11 +1,5 @@
 # Bat to exe conversion instructions
-Download "Bat To Exe Converter" with the following link : https://www.majorgeeks.com/files/details/bat_to_exe_converter.html ,
-
-Install it,
-
-If you want to modify the BioimageIT_installer.exe, in order to change the installation process (on install.bat, install_aftergit.bat, install_conda_docker.bat or install_main.bat), open install_main.bat.
-
-Click on the "Embed" tab on the right of Bat To Exe Converter and add the install.bat, install_aftergit.bat, install_conda_docker.bat files.
-
-Then, click on the "Convert" button (don't forget to save with the "Save" button)  at the top of Bat To Exe Converter and choose the repertory of your new exe.
-
+Type the following command in the Windows Terminhal (you need to be in the directory containing bat2exe.bat and install_main.bat) :
+```bash
+bat2exe.bat install_main.bat YOUR_NEW_EXE.exe
+```
