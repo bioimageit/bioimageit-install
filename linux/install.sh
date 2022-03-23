@@ -91,6 +91,7 @@ setup_bioimageit(){
 
     # userdata
     mkdir workspace
+    mkdir workspace/logs
 
     # install and config packages
     $pip_path install ./bioimageit_formats

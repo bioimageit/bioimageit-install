@@ -53,6 +53,7 @@ setup_bioimageit(){
 
     # userdata
     mkdir workspace
+    mkdir workspace/logs
 
     # install and config packages
     . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && pip install ./bioimageit_formats
