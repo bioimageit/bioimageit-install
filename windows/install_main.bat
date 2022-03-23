@@ -1,41 +1,3 @@
-::[Bat To Exe Converter]
-::
-::fBE1pAF6MU+EWHreyHcjLQlHcAiPPX6oH4k45+vu4u+Jtl4hduswUYLa3bGnFK0U41HYd58i33dbn84FGFZRcAG/bwM4lXlLuGCKINSgugHyXkmF6gUyGnEU
-::fBE1pAF6MU+EWHreyHcjLQlHcAiPPX6oH4k45+vu4u+Jtl4hduswUYLa3bGnFK0U41HYd58i33dbn84FGFZRcAG/bwM4lXlLuGCKINSgugHyXkmF6nQxHXFxlWTZmGU5YccI
-::fBE1pAF6MU+EWHreyHcjLQlHcAiPPX6oH4k45+vu4u+Jtl4hduswUYLa3bGnFK0U41HYd58i33dbn84FGFZRcAG/bwM4lXlLuGCKINSgugHyXkmF6nQzFGtwhlzUgygwZcEmmMIXsw==
-::fBE1pAF6MU+EWHreyHcjLQlHcAiPPX6oH4k45+vu4u+Jtl4hduswUYLa3bGnFK0U41HYd58i33dbn84FGFZRcAG/bwM4lXlLuGCKINSgugHyXkmF6nQ2Em99yWHRmEs=
-::fBE1pAF6MU+EWHreyHcjLQlHcAiPPX6oH4k45+vu4u+Jtl4hduswUYLa3bGnFK0U41HYd58i33dbn84FGFZRcAG/bwM4lXlLuGCKINSgugHyXkmF6nQ9Gmx6yWHRmEs=
-::YAwzoRdxOk+EWAjk
-::fBw5plQjdCyDJGyX8VAjFBdZTRGQJVeeCbYJ5e31+/m7gEQSfe8+f4ry7vmJKfQv6EzrfJss0X9TjIYFAghMfx6nUhg9p2pNoXe5PsSTvUHoSUfp
-::YAwzuBVtJxjWCl3EqQJgSA==
-::ZR4luwNxJguZRRnk
-::Yhs/ulQjdF+5
-::cxAkpRVqdFKZSDk=
-::cBs/ulQjdF+5
-::ZR41oxFsdFKZSDk=
-::eBoioBt6dFKZSDk=
-::cRo6pxp7LAbNWATEpSI=
-::egkzugNsPRvcWATEpCI=
-::dAsiuh18IRvcCxnZtBJQ
-::cRYluBh/LU+EWAnk
-::YxY4rhs+aU+IeA==
-::cxY6rQJ7JhzQF1fEqQJgZksaHmQ=
-::ZQ05rAF9IBncCkqN+0xwdVsEAlTMbgs=
-::ZQ05rAF9IAHYFVzEqQISIRRdQQWFOUKORrwS+/z64+aCsC0=
-::eg0/rx1wNQPfEVWB+kM9LVsJDGQ=
-::fBEirQZwNQPfEVWB+kM9LVsJDGQ=
-::cRolqwZ3JBvQF1fEqQIZJghATQiOLyuYD7oV5en86sOz4gBdZ8cNSKb49dQ=
-::dhA7uBVwLU+EWGqhxnIZCzQ0
-::YQ03rBFzNR3SWATElA==
-::dhAmsQZ3MwfNWATElA==
-::ZQ0/vhVqMQ3MEVWAtB9wSA==
-::Zg8zqx1/OA3MEVWAtB9wSA==
-::dhA7pRFwIByZRRnk
-::Zh4grVQjdCyDJGyX8VAjFBdZTRGQJVeeCbYJ5e31+/m7gEQSfe8+f4ry7vmJKfQv6EzrfJss0X9TjIYFAghMfx6nUhg9p2pNoXe5Fc6TugLgTU2g0nQ5FXZghm/ciTl1Zctt+g==
-::YB416Ek+Zm8=
-::
-::
-::978f952a14a936cc963da21a135fa983
 rem Is Winget already installed ?
 rem start ms-appinstaller:?source=https://aka.ms/getwinget
 
@@ -47,19 +9,121 @@ cd "C:\Users\%USERNAME%"
 mkdir BioImageIT
 cd BioImageIT
 
-copy "%installer_dir%\install.bat" .\install.bat
-copy "%installer_dir%\install_main.bat" .\install_main.bat
-copy "%installer_dir%\install_aftergit.bat" .\install_aftergit.bat
-copy "%installer_dir%\install_conda_docker.bat" .\install_conda_docker.bat
-copy "%installer_dir%\install_fiji.bat" .\install_fiji.bat
 
-call install_conda_docker.bat
+rem call install_conda_docker.bat
+rem mkdir "C:\Users\%USERNAME%\Programes_bioimageIT"
 
-call install.bat
+rem installation Miniconda
+if not exist "C:\Users\%USERNAME%\BioImageIT\Miniconda3\condabin\conda.bat" curl https://repo.anaconda.com/miniconda/Miniconda3-py39_4.10.3-Windows-x86_64.exe --output miniconda_installer.exe
+if not exist "C:\Users\%USERNAME%\BioImageIT\Miniconda3\condabin\conda.bat" start /wait "" miniconda_installer.exe /InstallationType=JustMe /RegisterPython=0 /S /D=%UserProfile%\BioImageIT\Miniconda3
+if exist "C:\Users\%USERNAME%\BioImageIT\Miniconda3\condabin\conda.bat" echo Miniconda already installed
+	
+if exist miniconda_installer.exe del miniconda_installer.exe	
 
-call install_aftergit.bat
 
-call install_fiji.bat
+rem installation Docker Desktop
+rem if not exist C:\"Program Files"\Docker\Docker\"Docker Desktop.exe" (winget install -e --id Docker.DockerDesktop)
+rem if exist C:\"Program Files"\Docker (echo Docker Desktop already installed)
+
+
+
+rem set BASEDIR=%CD%
+rem cd %BASEDIR%
+
+
+
+set conda_path="C:\Users\%USERNAME%\BioImageIT\Miniconda3\condabin\conda.bat"
+
+call %conda_path% upgrade conda -y
+call %conda_path% config --add channels conda-forge
+call %conda_path% config --add channels bioimageit
+call %conda_path% create -y --name bioimageit python=3.9
+
+
+rem call install.bat
+set miniconda_path=C:\Users\"%USERNAME%"\BioImageIT\Miniconda3
+set conda_path="C:\Users\%USERNAME%\BioImageIT\Miniconda3\condabin\conda.bat"
+set python_path="C:\Users\%USERNAME%\BioImageIT\Miniconda3\envs\bioimageit\python.exe"
+
+call %miniconda_path%\Scripts\activate.bat bioimageit
+
+call %conda_path% install -y git 
+call %conda_path% install -y -c ome omero-py
+
+
+rem call install_aftergit.bat
+set in_destination_dir="."
+set in_backend="CONDA"
+
+REM check inputs
+echo "destination dir:" %in_destination_dir%
+echo "backend:" %in_backend%
+
+
+cd %in_destination_dir%
+rem %python_path% -m venv .bioimageit-env
+rem call .bioimageit-env\Scripts\activate
+
+git clone https://github.com/bioimageit/bioimageit_framework.git
+git clone https://github.com/bioimageit/bioimageit_core.git
+git clone https://github.com/bioimageit/bioimageit_gui.git
+git clone https://github.com/bioimageit/bioimageit_formats.git
+git clone https://github.com/bioimageit/bioimageit_viewer.git
+git clone https://github.com/bioimageit/bioimageit-toolboxes.git
+git clone https://github.com/bioimageit/bioimageit-package.git
+git clone https://github.com/bioimageit/bioimageit-install.git
+git clone https://github.com/bioimageit/bioimageit-notebooks.git
+
+REM create toolboxes database
+mkdir toolboxes
+mkdir toolboxes\thumbs\
+copy .\bioimageit-toolboxes\thumbs\ .\toolboxes\thumbs\
+copy .\bioimageit-toolboxes\toolboxes.json .\toolboxes\toolboxes.json
+copy .\bioimageit-toolboxes\tools.json .\toolboxes\tools.json
+copy .\bioimageit-toolboxes\formats.json .\formats.json
+REM rd /s /q .\bioimageit-toolboxes
+
+REM create shortcuts
+copy .\bioimageit-package\windows\BioImageIT.bat .\BioImageIT.bat
+copy .\bioimageit-package\windows\BioImageIT-Browser.bat .\BioImageIT-Browser.bat
+copy .\bioimageit-package\windows\BioImageIT-Toolboxes.bat .\BioImageIT-Toolboxes.bat
+copy .\bioimageit-package\windows\BioImageIT-Runner.bat .\BioImageIT-Runner.bat
+copy .\bioimageit-package\windows\BioImageIT-Viewer.bat .\BioImageIT-Viewer.bat
+copy .\bioimageit-package\windows\jupyter.bat .\jupyter.bat
+copy .\bioimageit-package\windows\workspace.bat .\workspace.bat
+
+
+REM workspace
+mkdir workspace
+
+REM install and config packages
+pip install .\bioimageit_formats
+pip install .\bioimageit_framework
+pip install .\bioimageit_core
+pip install .\bioimageit_gui
+pip install .\bioimageit_viewer
+pip install jupyter
+python bioimageit_core\config.py "%USERNAME%" %in_backend%
+python bioimageit_gui\config.py 
+
+
+
+rem call install_fiji.bat
+rem INSTALLING FIJI/IMAGEJ
+
+cd C:\Users\"%USERNAME%"\BioImageIT
+
+curl https://downloads.imagej.net/fiji/latest/fiji-win64.zip > fiji.zip
+
+powershell -command Expand-Archive -Force .\fiji.zip .\
+
+del fiji.zip
+
+cd Fiji.app
+ImageJ-win64.exe --update all
+cd C:\Users\"%USERNAME%"\BioImageIT
+
+
 
 
 rem make shortcuts on desktop
@@ -134,11 +198,6 @@ del %SCRIPT%
 
 rem Remove useless files & folders
 cd "C:\Users\%USERNAME%\BioImageIT"
-del /f install_main.bat
-del /f install.bat
-del /f install_conda_docker.bat
-del /f install_aftergit.bat
-del /f install_fiji.bat
 rmdir /s /q bioimageit-package
 rmdir /s /q bioimageit-toolboxes
 
