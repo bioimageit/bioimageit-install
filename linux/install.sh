@@ -31,7 +31,7 @@ setup_bioimageit(){
     #git clone https://github.com/bioimageit/bioimageit-package.git
 
     wget https://github.com/bioimageit/bioimageit_framework/archive/refs/heads/main.zip
-    unzip ./main.unzip
+    unzip ./main.zip
     rm ./main.zip
     mv ./bioimageit_framework-main ./bioimageit_framework
 
