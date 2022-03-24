@@ -95,6 +95,7 @@ copy .\bioimageit-package\windows\workspace.bat .\workspace.bat
 
 REM workspace
 mkdir workspace
+mkdir workspace\logs
 
 REM install and config packages
 pip install .\bioimageit_formats
