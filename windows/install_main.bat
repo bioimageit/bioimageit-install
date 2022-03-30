@@ -49,6 +49,7 @@ call %miniconda_path%\Scripts\activate.bat bioimageit
 
 call %conda_path% install -y git 
 call %conda_path% install -y -c ome omero-py
+call %conda_path% install -y -c conda-forge gitpython
 
 
 rem call install_aftergit.bat
