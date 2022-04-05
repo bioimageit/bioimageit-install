@@ -125,6 +125,8 @@ cd Fiji.app
 ImageJ-win64.exe --update all
 cd C:\Users\"%USERNAME%"\BioImageIT
 
+xcopy "C:\Users\%USERNAME%\BioImageIT\toolboxes\tools\fiji_utils" "C:\Users\%USERNAME%\BioImageIT\Fiji.app\macros" 
+xcopy "C:\Users\%USERNAME%\BioImageIT\toolboxes\tools\fiji_plugins" "C:\Users\%USERNAME%\BioImageIT\Fiji.app\plugins"
 
 
 
@@ -202,9 +204,6 @@ rem Remove useless files & folders
 cd "C:\Users\%USERNAME%\BioImageIT"
 rmdir /s /q bioimageit-package
 rmdir /s /q bioimageit-toolboxes
-
-
-xcopy "C:\Users\%USERNAME%\BioImageIT\toolboxes\tools\fiji_utils" "C:\Users\%USERNAME%\BioImageIT\Fiji.app\macros" 
-
-
+rmdir /s /q toolboxes\tools\fiji_utils
+rmdir /s /q toolboxes\tools\fiji_plugins
 pause
