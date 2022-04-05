@@ -138,8 +138,6 @@ setup_bioimageit $installdir $python_path $pip_path $USER "CONDA"
 
 
 
-
-
 ###################### FIJI ###########################
 cd $installdir
 
@@ -171,3 +169,15 @@ rm BioImageIT-Jupyter.desktop
 wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/windows/icon.ico
 wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/linux/Workspace.ico
 wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/linux/jupyter.ico
+
+
+
+##################### Removing useless #######################
+cd $installdir
+rm -rf ./bioimageit-package
+rm -rf ./bioimageit-toolboxes
+rm -rf ./toolboxes/tools/fiji_utils
+rm -rf ./toolboxes/tools/fiji_plugins
+
+
+
