@@ -130,6 +130,7 @@ $conda_bin install git -y
 $conda_bin install -c ome omero-py -y
 $conda_bin install -c conda-forge pyside2 -y
 $conda_bin install qt -y
+%conda_bin install -y -c conda-forge gitpython
 
 # clone and setup BioImageIT
 setup_bioimageit $installdir $python_path $pip_path $USER "CONDA" 
