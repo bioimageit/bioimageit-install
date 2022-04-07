@@ -88,6 +88,7 @@ install_miniconda $installdir
 
 # create bioimageit env
 . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda create -y --name bioimageit python=3.9
+. "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && conda install -y git
 . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && conda install -y -c ome omero-py
 
 # clone and setup BioImageIT
