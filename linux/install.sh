@@ -22,11 +22,11 @@ setup_bioimageit(){
     in_backend=$5
 
     cd $in_destination_dir
-    . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && git clone https://github.com/bioimageit/bioimageit_framework.git --depth 1 --branch main
-    . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && git clone https://github.com/bioimageit/bioimageit_formats.git --depth 1 --branch main
-    . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && git clone https://github.com/bioimageit/bioimageit_core.git --depth 1 --branch main
-    . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && git clone https://github.com/bioimageit/bioimageit_gui.git --depth 1 --branch main
-    . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && git clone https://github.com/bioimageit/bioimageit_viewer.git --depth 1 --branch main
+    . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && git clone https://github.com/bioimageit/bioimageit_framework.git --depth 1 --branch v0.1.0
+    . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && git clone https://github.com/bioimageit/bioimageit_formats.git --depth 1 --branch v0.1.0
+    . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && git clone https://github.com/bioimageit/bioimageit_core.git --depth 1 --branch v0.1.0
+    . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && git clone https://github.com/bioimageit/bioimageit_gui.git --depth 1 --branch v0.1.0
+    . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && git clone https://github.com/bioimageit/bioimageit_viewer.git --depth 1 --branch v0.1.0
     . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && git clone https://github.com/bioimageit/bioimageit-toolboxes.git
     . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && git clone https://github.com/bioimageit/bioimageit-tools.git
     . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && git clone https://github.com/bioimageit/bioimageit-package.git
