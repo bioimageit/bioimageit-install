@@ -65,11 +65,11 @@ cd %in_destination_dir%
 rem %python_path% -m venv .bioimageit-env
 rem call .bioimageit-env\Scripts\activate
 
-git clone https://github.com/bioimageit/bioimageit_framework.git --branch v0.1.0
-git clone https://github.com/bioimageit/bioimageit_core.git --branch v0.1.0
-git clone https://github.com/bioimageit/bioimageit_gui.git --branch v0.1.0
-git clone https://github.com/bioimageit/bioimageit_formats.git --branch v0.1.0
-git clone https://github.com/bioimageit/bioimageit_viewer.git --branch v0.1.0
+git clone https://github.com/bioimageit/bioimageit_framework.git
+git clone https://github.com/bioimageit/bioimageit_core.git
+git clone https://github.com/bioimageit/bioimageit_gui.git
+git clone https://github.com/bioimageit/bioimageit_formats.git
+git clone https://github.com/bioimageit/bioimageit_viewer.git
 git clone https://github.com/bioimageit/bioimageit-toolboxes.git
 git clone https://github.com/bioimageit/bioimageit-package.git
 git clone https://github.com/bioimageit/bioimageit-install.git
@@ -203,7 +203,6 @@ del %SCRIPT%
 rem Remove useless files & folders
 cd "C:\Users\%USERNAME%\BioImageIT"
 rmdir /s /q bioimageit-package
-rmdir /s /q bioimageit-toolboxes
 rmdir /s /q toolboxes\tools\fiji_utils
 rmdir /s /q toolboxes\tools\fiji_plugins
 pause
