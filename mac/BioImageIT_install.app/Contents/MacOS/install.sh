@@ -44,9 +44,9 @@ setup_bioimageit(){
     # create shortcuts
     cp bioimageit-package/mac/BioImageIT.sh BioImageIT.sh
     cp bioimageit-package/mac/jupyter.sh jupyter.sh
-    cp -r bioimageit-package/mac/BioImageIT.app/ /Users/$USER/Applications/BioImageIT.app/
-    cp -r "bioimageit-package/mac/BioImageIT Workspace.app/" "/Users/$USER/Applications/BioImageIT Workspace.app/"
-    cp -r "bioimageit-package/mac/BioImageIT Jupyter.app/" "/Users/$USER/Applications/BioImageIT Jupyter.app/"
+    cp -r bioimageit-package/mac/BioImageIT.app/ /Applications/BioImageIT.app/
+    cp -r "bioimageit-package/mac/BioImageIT Workspace.app/" "/Applications/BioImageIT Workspace.app/"
+    cp -r "bioimageit-package/mac/BioImageIT Jupyter.app/" "/Applications/BioImageIT Jupyter.app/"
 
     chmod +x BioImageIT.sh
     chmod +x jupyter.sh
@@ -89,6 +89,7 @@ install_miniconda $installdir
 # create bioimageit env
 . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda create -y --name bioimageit python=3.9
 . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && conda install -y git
+. "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && conda install -y -c conda-forge gitpython
 . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && conda install -y -c ome omero-py
 
 # clone and setup BioImageIT
