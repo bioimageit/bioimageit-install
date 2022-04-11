@@ -23,11 +23,11 @@ setup_bioimageit(){
 
     cd $in_destination_dir 
 
-    git clone https://github.com/bioimageit/bioimageit_framework.git --depth 1 --branch v0.1.0
-    git clone https://github.com/bioimageit/bioimageit_formats.git --depth 1 --branch v0.1.0
-    git clone https://github.com/bioimageit/bioimageit_core.git --depth 1 --branch v0.1.0
-    git clone https://github.com/bioimageit/bioimageit_gui.git --depth 1 --branch v0.1.0
-    git clone https://github.com/bioimageit/bioimageit_viewer.git --depth 1 --branch v0.1.0
+    git clone https://github.com/bioimageit/bioimageit_framework.git
+    git clone https://github.com/bioimageit/bioimageit_formats.git
+    git clone https://github.com/bioimageit/bioimageit_core.git
+    git clone https://github.com/bioimageit/bioimageit_gui.git
+    git clone https://github.com/bioimageit/bioimageit_viewer.git
     git clone https://github.com/bioimageit/bioimageit-toolboxes.git
     git clone https://github.com/bioimageit/bioimageit-tools.git
     git clone https://github.com/bioimageit/bioimageit-package.git
