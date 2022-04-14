@@ -129,42 +129,24 @@ xcopy "C:\Users\%USERNAME%\BioImageIT\toolboxes\tools\fiji_utils" "C:\Users\%USE
 xcopy "C:\Users\%USERNAME%\BioImageIT\toolboxes\tools\fiji_plugins" "C:\Users\%USERNAME%\BioImageIT\Fiji.app\plugins"
 
 
+rem SHORTCUTS
+cd "C:\Users\%USERNAME%\BioImageIT"
+mkdir icons
+copy .\bioimageit-install\windows\icon.ico .\icons\icon.ico
+copy .\bioimageit-install\linux\Workspace.ico .\icons\Workspace.ico
+copy .\bioimageit-install\linux\jupyter.ico .\icons\jupyter.ico
+
+cd C:\Users\"%USERNAME%"\BioImageIT\bioimageit-install\windows
+dir
 
 rem make shortcuts on desktop
-@echo off
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "%USERPROFILE%\Desktop\BioimageIT.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\Users\%USERNAME%\BioImageIT\BioImageIT.bat" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
+nircmd.exe shortcut "C:\Users\%USERNAME%\BioImageIT\BioImageIT.bat" "C:\Users\%USERNAME%\Desktop" "BioImageIT" "" "C:\Users\%USERNAME%\BioImageIT\icons\icon.ico"
 
 rem makes shortcuts in start menu
 mkdir "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT"
-
-@echo off
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT\BioImageIT.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\Users\%USERNAME%\BioImageIT\BioImageIT.bat" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
-
-
-@echo off
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT\Workspace.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\Users\%USERNAME%\BioImageIT\workspace.bat" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
-
+nircmd.exe shortcut "C:\Users\%USERNAME%\BioImageIT\BioImageIT.bat" "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT" "BioImageIT" "" "C:\Users\%USERNAME%\BioImageIT\icons\icon.ico"
+nircmd.exe shortcut "C:\Users\%USERNAME%\BioImageIT\workspace.bat" "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT" "Workspace" "" "C:\Users\%USERNAME%\BioImageIT\icons\Workspace.ico"
+nircmd.exe shortcut "C:\Users\%USERNAME%\BioImageIT\jupyter.bat" "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT" "Jupyter" "" "C:\Users\%USERNAME%\BioImageIT\icons\jupyter.ico"
 
 @echo off
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
@@ -172,17 +154,6 @@ echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
 echo sLinkFile = "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT\Imagej.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "C:\Users\%USERNAME%\BioImageIT\Fiji.app\ImageJ-win64.exe" >> %SCRIPT%
-echo oLink.Save >> %SCRIPT%
-cscript /nologo %SCRIPT%
-del %SCRIPT%
-
-
-@echo off
-set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
-echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT\Jupyter.lnk" >> %SCRIPT%
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\Users\%USERNAME%\BioImageIT\jupyter.bat" >> %SCRIPT%
 echo oLink.Save >> %SCRIPT%
 cscript /nologo %SCRIPT%
 del %SCRIPT%
@@ -202,7 +173,12 @@ del %SCRIPT%
 
 rem Remove useless files & folders
 cd "C:\Users\%USERNAME%\BioImageIT"
+
+copy .\bioimageit-install\windows\uninstall_bioimageit.exe .\uninstall_bioimageit.exe
+
 rmdir /s /q bioimageit-package
 rmdir /s /q toolboxes\tools\fiji_utils
 rmdir /s /q toolboxes\tools\fiji_plugins
+rmdir /s /q bioimageit-install
+
 pause
