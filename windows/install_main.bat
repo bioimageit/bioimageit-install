@@ -1,38 +1,23 @@
-rem Is Winget already installed ?
-rem start ms-appinstaller:?source=https://aka.ms/getwinget
-
-rem pause
-
 set installer_dir=%CD%
 
-cd "C:\Users\%USERNAME%"
+
+cd %1
+echo %1
 mkdir BioImageIT
 cd BioImageIT
+set bioimageit_dir=%1\BioImageIT
+echo %bioimageit_dir%
 
-
-rem call install_conda_docker.bat
-rem mkdir "C:\Users\%USERNAME%\Programes_bioimageIT"
 
 rem installation Miniconda
-if not exist "C:\Users\%USERNAME%\BioImageIT\Miniconda3\condabin\conda.bat" curl https://repo.anaconda.com/miniconda/Miniconda3-py39_4.10.3-Windows-x86_64.exe --output miniconda_installer.exe
-if not exist "C:\Users\%USERNAME%\BioImageIT\Miniconda3\condabin\conda.bat" start /wait "" miniconda_installer.exe /InstallationType=JustMe /RegisterPython=0 /S /D=%UserProfile%\BioImageIT\Miniconda3
-if exist "C:\Users\%USERNAME%\BioImageIT\Miniconda3\condabin\conda.bat" echo Miniconda already installed
+if not exist "%bioimageit_dir%\Miniconda3\condabin\conda.bat" curl https://repo.anaconda.com/miniconda/Miniconda3-py39_4.10.3-Windows-x86_64.exe --output miniconda_installer.exe
+if not exist "%bioimageit_dir%\Miniconda3\condabin\conda.bat" start /wait "" miniconda_installer.exe /InstallationType=JustMe /RegisterPython=0 /S /D=%bioimageit_dir%\Miniconda3
+if exist "%bioimageit_dir%\Miniconda3\condabin\conda.bat" echo Miniconda already installed
 	
 if exist miniconda_installer.exe del miniconda_installer.exe	
 
 
-rem installation Docker Desktop
-rem if not exist C:\"Program Files"\Docker\Docker\"Docker Desktop.exe" (winget install -e --id Docker.DockerDesktop)
-rem if exist C:\"Program Files"\Docker (echo Docker Desktop already installed)
-
-
-
-rem set BASEDIR=%CD%
-rem cd %BASEDIR%
-
-
-
-set conda_path="C:\Users\%USERNAME%\BioImageIT\Miniconda3\condabin\conda.bat"
+set conda_path="%bioimageit_dir%\Miniconda3\condabin\conda.bat"
 
 call %conda_path% upgrade conda -y
 call %conda_path% config --add channels conda-forge
@@ -41,9 +26,9 @@ call %conda_path% create -y --name bioimageit python=3.9
 
 
 rem call install.bat
-set miniconda_path=C:\Users\"%USERNAME%"\BioImageIT\Miniconda3
-set conda_path="C:\Users\%USERNAME%\BioImageIT\Miniconda3\condabin\conda.bat"
-set python_path="C:\Users\%USERNAME%\BioImageIT\Miniconda3\envs\bioimageit\python.exe"
+set miniconda_path=%bioimageit_dir%\Miniconda3
+set conda_path="%bioimageit_dir%\Miniconda3\condabin\conda.bat"
+set python_path="%bioimageit_dir%\BioImageIT\Miniconda3\envs\bioimageit\python.exe"
 
 call %miniconda_path%\Scripts\activate.bat bioimageit
 
@@ -113,7 +98,7 @@ python bioimageit_gui\config.py
 rem call install_fiji.bat
 rem INSTALLING FIJI/IMAGEJ
 
-cd C:\Users\"%USERNAME%"\BioImageIT
+cd %bioimageit_dir%
 
 curl https://downloads.imagej.net/fiji/latest/fiji-win64.zip > fiji.zip
 
@@ -123,59 +108,58 @@ del fiji.zip
 
 cd Fiji.app
 ImageJ-win64.exe --update all
-cd C:\Users\"%USERNAME%"\BioImageIT
+cd %bioimageit_dir%
 
-xcopy "C:\Users\%USERNAME%\BioImageIT\toolboxes\tools\fiji_utils" "C:\Users\%USERNAME%\BioImageIT\Fiji.app\macros" 
-xcopy "C:\Users\%USERNAME%\BioImageIT\toolboxes\tools\fiji_plugins" "C:\Users\%USERNAME%\BioImageIT\Fiji.app\plugins"
+xcopy "%bioimageit_dir%\toolboxes\tools\fiji_utils" "%bioimageit_dir%\Fiji.app\macros" 
+xcopy "%bioimageit_dir%\toolboxes\tools\fiji_plugins" "%bioimageit_dir%\Fiji.app\plugins"
 
 
 rem SHORTCUTS
-cd "C:\Users\%USERNAME%\BioImageIT"
+cd %bioimageit_dir%
 mkdir icons
 copy .\bioimageit-install\windows\icon.ico .\icons\icon.ico
 copy .\bioimageit-install\linux\Workspace.ico .\icons\Workspace.ico
 copy .\bioimageit-install\linux\jupyter.ico .\icons\jupyter.ico
 
-cd C:\Users\"%USERNAME%"\BioImageIT\bioimageit-install\windows
+cd %bioimageit_dir%\bioimageit-install\windows
 dir
 
 rem make shortcuts on desktop
-nircmd.exe shortcut "C:\Users\%USERNAME%\BioImageIT\BioImageIT.bat" "C:\Users\%USERNAME%\Desktop" "BioImageIT" "" "C:\Users\%USERNAME%\BioImageIT\icons\icon.ico"
+nircmd.exe shortcut "%bioimageit_dir%\BioImageIT.bat" "C:\Users\%USERNAME%\Desktop" "BioImageIT" "" "%bioimageit_dir%\icons\icon.ico"
 
 rem makes shortcuts in start menu
 mkdir "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT"
-nircmd.exe shortcut "C:\Users\%USERNAME%\BioImageIT\BioImageIT.bat" "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT" "BioImageIT" "" "C:\Users\%USERNAME%\BioImageIT\icons\icon.ico"
-nircmd.exe shortcut "C:\Users\%USERNAME%\BioImageIT\workspace.bat" "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT" "Workspace" "" "C:\Users\%USERNAME%\BioImageIT\icons\Workspace.ico"
-nircmd.exe shortcut "C:\Users\%USERNAME%\BioImageIT\jupyter.bat" "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT" "Jupyter" "" "C:\Users\%USERNAME%\BioImageIT\icons\jupyter.ico"
+nircmd.exe shortcut "%bioimageit_dir%\BioImageIT.bat" "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT" "BioImageIT" "" "%bioimageit_dir%\icons\icon.ico"
+nircmd.exe shortcut "%bioimageit_dir%\workspace.bat" "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT" "Workspace" "" "%bioimageit_dir%\icons\Workspace.ico"
+nircmd.exe shortcut "%bioimageit_dir%\jupyter.bat" "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT" "Jupyter" "" "%bioimageit_dir%\icons\jupyter.ico"
 
 @echo off
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
 echo sLinkFile = "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT\Imagej.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\Users\%USERNAME%\BioImageIT\Fiji.app\ImageJ-win64.exe" >> %SCRIPT%
+echo oLink.TargetPath = "%bioimageit_dir%\Fiji.app\ImageJ-win64.exe" >> %SCRIPT%
 echo oLink.Save >> %SCRIPT%
 cscript /nologo %SCRIPT%
 del %SCRIPT%
 
 
 rem start menu shortcut for uninstallaton
+copy %bioimageit_dir%\bioimageit-install\windows\uninstall_bioimageit.exe %bioimageit_dir%\uninstall_bioimageit.exe
+
 @echo off
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
 echo sLinkFile = "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\BioimageIT\uninstall_BioimageIT.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "C:\Users\%USERNAME%\BioImageIT\bioimageit-install\windows\uninstall_bioimageit.exe" >> %SCRIPT%
+echo oLink.TargetPath = "%bioimageit_dir%\uninstall_bioimageit.exe" >> %SCRIPT%
 echo oLink.Save >> %SCRIPT%
 cscript /nologo %SCRIPT%
 del %SCRIPT%
 
 
 rem Remove useless files & folders
-cd "C:\Users\%USERNAME%\BioImageIT"
-
-copy .\bioimageit-install\windows\uninstall_bioimageit.exe .\uninstall_bioimageit.exe
-
+cd %bioimageit_dir%
 rmdir /s /q bioimageit-package
 rmdir /s /q toolboxes\tools\fiji_utils
 rmdir /s /q toolboxes\tools\fiji_plugins
