@@ -1,25 +1,14 @@
 Add-Type -AssemblyName System.Windows.Forms
-[System.Windows.Forms.Application]::EnableVisualStyles()
-
-$ErrorActionPreference = 'SilentlyContinue'
-$wshell = New-Object -ComObject Wscript.Shell
-$Button = [System.Windows.MessageBoxButton]::YesNoCancel
-$ErrorIco = [System.Windows.MessageBoxImage]::Error
-
-
-
 $Form                            = New-Object system.Windows.Forms.Form
-$Form.ClientSize                 = New-Object System.Drawing.Point(500,500)
+$Form.Width                      = 600
+$Form.Height                     = 400
 $Form.text                       = "BioImageIT Installer"
-$Form.StartPosition              = "CenterScreen"
-$Form.TopMost                    = $false
-$Form.BackColor                  = [System.Drawing.ColorTranslator]::FromHtml("#e9e9e9")
-$Form.AutoScaleDimensions     = '192, 192'
-$Form.AutoScaleMode           = "Dpi"
-$Form.AutoSize                = $True
-$Form.AutoScroll              = $True
-$Form.ClientSize              = '500, 500'
-$Form.FormBorderStyle         = 'FixedSingle'
+$Form.AutoSize                   = $True
+
+
+
+
+
 
 
 ############################################################
@@ -28,61 +17,50 @@ $Form.FormBorderStyle         = 'FixedSingle'
 $name = (Get-ChildItem Env:\USERNAME).Value
 Out-String -InputObject $name
 mkdir C:\Users\$name\BioImageIT
+Invoke-WebRequest -Uri https://github.com/bioimageit/bioimageit-install/raw/main/windows/icon.ico -OutFile C:\Users\$name\BioImageIT\ico.icon
+
+
+
+##########################
+########## Icon ##########
+##########################
+$objIcon = New-Object system.drawing.icon ("C:\Users\$name\BioImageIT\ico.icon")
+$Form.Icon = $objIcon
+
 
 ######################################
 ########## Buttons & Panels ##########
 ######################################
-$iconBytes                       = [Convert]::FromBase64String($iconBase64)
-$stream                          = New-Object IO.MemoryStream($iconBytes, 0, $iconBytes.Length)
-$stream.Write($iconBytes, 0, $iconBytes.Length)
-$Form.Icon                    = [System.Drawing.Icon]::FromHandle((New-Object System.Drawing.Bitmap -Argument $stream).GetHIcon())
 
-$Form.Width                   = $objImage.Width
-$Form.Height                  = $objImage.Height
+$Label1                          = New-Object system.Windows.Forms.Label
+$Label1.text                     = "Where to install BioImageIT ?"
+$Label1.AutoSize                 = $true
+$Label1.location                 = New-Object System.Drawing.Point(0,10)
+$Label1.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',12,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
 
-$Panel1                          = New-Object system.Windows.Forms.Panel
-$Panel1.height                   = 400
-$Panel1.width                    = 300
-$Panel1.location                 = New-Object System.Drawing.Point(1,1)
+$path                            = New-Object system.Windows.Forms.TextBox
+$path.multiline                  = $true
+$path.width                      = 250
+$path.height                     = 30
+$path.location                   = New-Object System.Drawing.Point(300,10)
+$path.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
 $directo                         = New-Object system.Windows.Forms.Button
-$directo.text                    = "Installation directory"
-$directo.width                   = 260
-$directo.height                  = 30
-$directo.location                = New-Object System.Drawing.Point(40,50)
+$directo.text                    = " ... "
+$directo.AutoSize                = $true
+$directo.location                = New-Object System.Drawing.Point(550,10)
 $directo.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
 $bioimageit                      = New-Object system.Windows.Forms.Button
 $bioimageit.text                 = "Install"
-$bioimageit.width                = 260
-$bioimageit.height               = 30
+$bioimageit.width                = 550
+$bioimageit.height               = 40
 $bioimageit.location             = New-Object System.Drawing.Point(40,200)
-$bioimageit.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$bioimageit.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
 
-$Label9                          = New-Object system.Windows.Forms.Label
-$Label9.text                     = "Install BioImageIT ?"
-$Label9.AutoSize                 = $true
-$Label9.width                    = 25
-$Label9.height                   = 10
-$Label9.location                 = New-Object System.Drawing.Point(40,100)
-$Label9.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',10,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
-
-$ResultText                      = New-Object system.Windows.Forms.TextBox
-$ResultText.multiline            = $true
-$ResultText.width                = 500
-$ResultText.height               = 50
-$ResultText.location             = New-Object System.Drawing.Point(450,100)
-$ResultText.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
-
-
-
-
-
-$Form.controls.AddRange(@($Panel1,$Panel2,$Label3,$Label15,$Panel4,$PictureBox1,$Label1,$Panel3,$ResultText,$Label10,$Label11,$urlfixwinstartup,$urlremovevirus,$urlcreateiso))
-$Panel1.controls.AddRange(@($bioimageit,$directo))
-$Panel2.controls.AddRange(@($essentialtweaks,$backgroundapps,$cortana,$actioncenter,$darkmode,$performancefx,$onedrive,$lightmode,$essentialundo,$EActionCenter,$ECortana,$RBackgroundApps,$HTrayIcons,$EClipboardHistory,$ELocation,$InstallOneDrive,$removebloat,$reinstallbloat,$WarningLabel,$Label5,$appearancefx,$STrayIcons,$EHibernation,$dualboottime))
-$Panel4.controls.AddRange(@($defaultwindowsupdate,$securitywindowsupdate,$Label16,$Label17,$Label18,$Label19,$windowsupdatefix,$disableupdates,$enableupdates,$Label12))
-$Panel3.controls.AddRange(@($yourphonefix,$ncpa,$oldcontrolpanel,$oldsoundpanel,$oldsystempanel,$NFS,$laptopnumlock,$Virtualization,$oldpower,$restorepower))
+$Form.controls.AddRange($Label1)
+$Form.controls.AddRange(@($bioimageit,$directo))
+$Form.controls.Add($path)
 
 
 
@@ -90,6 +68,8 @@ $Panel3.controls.AddRange(@($yourphonefix,$ncpa,$oldcontrolpanel,$oldsoundpanel,
 ############################################
 ########## Launching installation ##########
 ############################################
+
+$path.text = 'C:\Users\' + $name + '\BioImageIT\'
 
 Add-Type -AssemblyName System.Windows.Forms
 $FolderBrowser = New-Object System.Windows.Forms.FolderBrowserDialog -Property @{
@@ -102,7 +82,7 @@ $directo.Add_Click({
     Write-Host "Choosing directory"
     [void]$FolderBrowser.ShowDialog()
     $FolderBrowser.SelectedPath
-    $ResultText.text = $FolderBrowser.SelectedPath
+    $path.text = $FolderBrowser.SelectedPath
 })
 
 
@@ -110,14 +90,14 @@ $directo.Add_Click({
 $bioimageit.Add_Click({
     Write-Host "Installing BioImageIT"
     Invoke-WebRequest -Uri https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/windows/install_main.bat -OutFile install_main.bat
-    $ResultText.text = "Installing BioImageIT..." 
+    $path.text = "Installing BioImageIT..." 
     Start-Process install_main.bat $FolderBrowser.SelectedPath
-    $ResultText.text = 'Start-Process install_main.bat ' + $FolderBrowser.SelectedPath
+    $path.text = 'Start-Process install_main.bat ' + $FolderBrowser.SelectedPath
 })
 
 # Remove-Item install_main.bat
 
-
+Remove-Item C:\Users\$name\BioImageIT\ico.icon
 
 
 
