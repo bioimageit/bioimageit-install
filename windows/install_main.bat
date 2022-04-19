@@ -5,7 +5,7 @@ cd %1
 echo %1
 mkdir BioImageIT
 cd BioImageIT
-set bioimageit_dir=%1\BioImageIT
+set bioimageit_dir=%1
 echo %bioimageit_dir%
 
 
