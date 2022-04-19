@@ -155,4 +155,3 @@ rmdir /s /q toolboxes\tools\fiji_utils
 rmdir /s /q toolboxes\tools\fiji_plugins
 rmdir /s /q bioimageit-install
 
-pause
