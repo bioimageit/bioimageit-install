@@ -3,8 +3,6 @@ set installer_dir=%CD%
 
 cd %1
 echo %1
-mkdir BioImageIT
-cd BioImageIT
 set bioimageit_dir=%1
 echo %bioimageit_dir%
 
@@ -28,7 +26,7 @@ call %conda_path% create -y --name bioimageit python=3.9
 rem call install.bat
 set miniconda_path=%bioimageit_dir%\Miniconda3
 set conda_path="%bioimageit_dir%\Miniconda3\condabin\conda.bat"
-set python_path="%bioimageit_dir%\BioImageIT\Miniconda3\envs\bioimageit\python.exe"
+set python_path="%bioimageit_dir%\Miniconda3\envs\bioimageit\python.exe"
 
 call %miniconda_path%\Scripts\activate.bat bioimageit
 
@@ -47,6 +45,7 @@ echo "backend:" %in_backend%
 
 
 cd %in_destination_dir%
+cd %bioimageit_dir%
 rem %python_path% -m venv .bioimageit-env
 rem call .bioimageit-env\Scripts\activate
 
@@ -76,6 +75,7 @@ copy .\bioimageit-package\windows\BioImageIT-Toolboxes.bat .\BioImageIT-Toolboxe
 copy .\bioimageit-package\windows\BioImageIT-Runner.bat .\BioImageIT-Runner.bat
 copy .\bioimageit-package\windows\BioImageIT-Viewer.bat .\BioImageIT-Viewer.bat
 copy .\bioimageit-package\windows\jupyter.bat .\jupyter.bat
+copy .\bioimageit-package\windows\workspace.bat .\workspace.bat
 
 
 REM workspace
