@@ -110,7 +110,7 @@ $directo.Add_Click({
 $bioimageit.Add_Click({
     Write-Host "Installing BioImageIT"
     $path.text = "Installing BioImageIT..." 
-    Start-Process install_main.bat $FolderBrowser.SelectedPath
+    Start-Process C:\Users\$name\BioImageIT\install_main.bat $FolderBrowser.SelectedPath
     $path.text = 'Start-Process install_main.bat ' + $FolderBrowser.SelectedPath
 })
  
