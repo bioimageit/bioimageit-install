@@ -76,7 +76,7 @@ $bioimageit.Font                 = New-Object System.Drawing.Font('Microsoft San
 $fin                             = New-Object system.Windows.Forms.Button
 $fin.text                        = "Close"
 $fin.location                    = New-Object System.Drawing.Point(550,350)
-$fin.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$fin.Font                        = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
 $Form.controls.AddRange($Label1)
 $Form.controls.AddRange(@($bioimageit,$directo, $fin))
@@ -109,9 +109,8 @@ $directo.Add_Click({
 
 $bioimageit.Add_Click({
     Write-Host "Installing BioImageIT"
+    cmd /c C:\Users\$name\BioImageIT\install_main.bat $FolderBrowser.SelectedPath | Tee-Object C:\Users\$name\BioImageIT\installation.log
     $path.text = "Installing BioImageIT..." 
-    Start-Process C:\Users\$name\BioImageIT\install_main.bat $FolderBrowser.SelectedPath
-    $path.text = 'Start-Process install_main.bat ' + $FolderBrowser.SelectedPath
 })
  
 
