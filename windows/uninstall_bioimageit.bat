@@ -14,13 +14,13 @@ rem UNINSTALL CONDA ? If YES, press ENTER. If NO, just  close the window
 
 pause
 
-start /D "C:\Users\%USERNAME%\BioImageIT\Miniconda3" Uninstall-Miniconda3.exe
+start /D ".\Miniconda3" Uninstall-Miniconda3.exe
 
 rem Miniconda uninstalled
 
 pause
 
-if not exist "C:\Users\%USERNAME%\BioImageIT\Miniconda3\Uninstall-Miniconda3.exe" rmdir /s /q "C:\Users\%USERNAME%\BioImageIT"
+if not exist ".\Miniconda3\Uninstall-Miniconda3.exe" del /s /q ".\*"
 
 rem BioImageIT removed
 
