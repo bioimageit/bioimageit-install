@@ -1,10 +1,24 @@
+##################################
+########## Hide Console ##########
+##################################
+function Hide-Console
+{
+    $consolePtr = [Console.Window]::GetConsoleWindow()
+    #0 hide
+    [Console.Window]::ShowWindow($consolePtr, 0)
+}
+
+
+#################################
+########## Making Form ##########
+#################################
 Add-Type -AssemblyName System.Windows.Forms
 $Form                            = New-Object system.Windows.Forms.Form
 $Form.Width                      = 600
 $Form.Height                     = 400
 $Form.text                       = "BioImageIT Installer"
 $Form.AutoSize                   = $True
-
+$OnForm                          = { Hide-Console }
 
 
 
@@ -18,6 +32,7 @@ $name = (Get-ChildItem Env:\USERNAME).Value
 Out-String -InputObject $name
 mkdir C:\Users\$name\BioImageIT
 Invoke-WebRequest -Uri https://github.com/bioimageit/bioimageit-install/raw/main/windows/icon.ico -OutFile C:\Users\$name\BioImageIT\ico.icon
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/windows/install_main.bat -OutFile C:\Users\$name\BioImageIT\install_main.bat
 
 
 
@@ -58,8 +73,13 @@ $bioimageit.height               = 40
 $bioimageit.location             = New-Object System.Drawing.Point(40,200)
 $bioimageit.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
 
+$fin                             = New-Object system.Windows.Forms.Button
+$fin.text                        = "Close"
+$fin.location                    = New-Object System.Drawing.Point(550,350)
+$fin.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
 $Form.controls.AddRange($Label1)
-$Form.controls.AddRange(@($bioimageit,$directo))
+$Form.controls.AddRange(@($bioimageit,$directo, $fin))
 $Form.controls.Add($path)
 
 
@@ -89,13 +109,17 @@ $directo.Add_Click({
 
 $bioimageit.Add_Click({
     Write-Host "Installing BioImageIT"
-    Invoke-WebRequest -Uri https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/windows/install_main.bat -OutFile install_main.bat
     $path.text = "Installing BioImageIT..." 
     Start-Process install_main.bat $FolderBrowser.SelectedPath
     $path.text = 'Start-Process install_main.bat ' + $FolderBrowser.SelectedPath
 })
+ 
 
-# Remove-Item install_main.bat
+$fin.Add_Click({
+    Remove-Item C:\Users\$name\BioImageIT\install_main.bat
+    $Form.Close()
+})
+
 
 Remove-Item C:\Users\$name\BioImageIT\ico.icon
 
