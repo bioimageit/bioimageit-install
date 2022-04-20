@@ -1,7 +1,12 @@
-# Bat to exe conversion instructions
-Type the following command in the Windows Terminhal :
+# PS1 to exe conversion instructions
+You need to install the PS2EXE Powershell extension with the command (Powershell terminal) :
 ```bash
-PATH_TO/bat2exe.bat PATH_TO/install_main.bat PATH_TO/YOUR_NEW_EXE.exe
+Install-Module ps2exe
+```
+
+Then, type the following command in the Powershell Terminhal :
+```bash
+ps2exe PATH_TO/install_BioImageIT.ps1 PATH_TO/YOUR_NEW_EXE.exe
 ```
 
 # Change the exe icon :
