@@ -74,10 +74,6 @@ REM rd /s /q .\bioimageit-toolboxes
 
 REM create shortcuts
 copy .\bioimageit-package\windows\BioImageIT.bat .\BioImageIT.bat
-copy .\bioimageit-package\windows\BioImageIT-Browser.bat .\BioImageIT-Browser.bat
-copy .\bioimageit-package\windows\BioImageIT-Toolboxes.bat .\BioImageIT-Toolboxes.bat
-copy .\bioimageit-package\windows\BioImageIT-Runner.bat .\BioImageIT-Runner.bat
-copy .\bioimageit-package\windows\BioImageIT-Viewer.bat .\BioImageIT-Viewer.bat
 copy .\bioimageit-package\windows\jupyter.bat .\jupyter.bat
 copy .\bioimageit-package\windows\workspace.bat .\workspace.bat
 copy .\bioimageit-install\windows\uninstall_bioimageit.bat .\uninstall_bioimageit.bat
