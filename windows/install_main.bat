@@ -49,6 +49,7 @@ cd %bioimageit_dir%
 rem %python_path% -m venv .bioimageit-env
 rem call .bioimageit-env\Scripts\activate
 
+rem main app
 git clone https://github.com/bioimageit/bioimageit_framework.git
 git clone https://github.com/bioimageit/bioimageit_core.git
 git clone https://github.com/bioimageit/bioimageit_gui.git
@@ -58,6 +59,9 @@ git clone https://github.com/bioimageit/bioimageit-toolboxes.git
 git clone https://github.com/bioimageit/bioimageit-package.git
 git clone https://github.com/bioimageit/bioimageit-install.git
 git clone https://github.com/bioimageit/bioimageit-notebooks.git
+
+rem plugins
+git clone https://github.com/bioimageit/bioimageit-omero.git
 
 REM create toolboxes database
 mkdir toolboxes
@@ -89,6 +93,7 @@ pip install .\bioimageit_framework
 pip install .\bioimageit_core
 pip install .\bioimageit_gui
 pip install .\bioimageit_viewer
+pip install .\bioimageit-omero
 pip install jupyter
 python bioimageit_core\config.py "%USERNAME%" %in_backend%
 python bioimageit_gui\config.py 

@@ -23,6 +23,7 @@ setup_bioimageit(){
 
     cd $in_destination_dir 
 
+    # main app
     git clone https://github.com/bioimageit/bioimageit_framework.git
     git clone https://github.com/bioimageit/bioimageit_formats.git
     git clone https://github.com/bioimageit/bioimageit_core.git
@@ -32,6 +33,9 @@ setup_bioimageit(){
     git clone https://github.com/bioimageit/bioimageit-tools.git
     git clone https://github.com/bioimageit/bioimageit-package.git
     git clone https://github.com/bioimageit/bioimageit-notebooks.git
+
+    # plugins
+    git clone https://github.com/bioimageit/bioimageit-omero.git
 
     # create toolboxes database
     mkdir toolboxes
@@ -61,6 +65,7 @@ setup_bioimageit(){
     . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && pip  install ./bioimageit_core
     . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && pip  install ./bioimageit_gui
     . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && pip  install ./bioimageit_viewer
+    . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && pip  install ./bioimageit-omero
     . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && pip  install jupyter
     . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && python  bioimageit_core/config.py "${in_username}" "${in_backend}"
     . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda activate bioimageit && python bioimageit_gui/config.py 
