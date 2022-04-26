@@ -20,7 +20,7 @@ $Form.Opacity                    = .96
 $name = (Get-ChildItem Env:\USERNAME).Value
 Out-String -InputObject $name
 mkdir C:\Users\$name\BioImageIT
-Invoke-WebRequest -Uri https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/windows/install_main.bat -OutFile C:\Users\$name\BioImageIT\install_main.bat
+Invoke-WebRequest -Uri https://github.com/bioimageit/bioimageit-install/raw/v0.1.1/windows/install_main.bat -OutFile C:\Users\$name\BioImageIT\install_main.bat
 
 
 
