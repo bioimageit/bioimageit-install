@@ -1,10 +1,24 @@
-set installer_dir=%CD%
+rem set installer_dir=%CD%
 
 
 cd %1
 echo %1
 set bioimageit_dir=%1
 echo %bioimageit_dir%
+
+set miniconda_path=%bioimageit_dir%\Miniconda3
+set conda_path="%bioimageit_dir%\Miniconda3\condabin\conda.bat"
+set python_path="%bioimageit_dir%\Miniconda3\envs\bioimageit\python.exe"
+
+set in_destination_dir="."
+set in_backend="CONDA"
+
+
+set LOGFILE=%1installation.log
+call :LOG >> %LOGFILE% 2>&1
+exit /B
+
+:LOG
 
 
 rem installation Miniconda
