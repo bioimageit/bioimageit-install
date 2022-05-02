@@ -20,7 +20,8 @@ $Form.Opacity                    = .96
 $name = (Get-ChildItem Env:\USERNAME).Value
 Out-String -InputObject $name
 mkdir C:\Users\$name\BioImageIT
-Invoke-WebRequest -Uri https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/windows/install_main.bat -OutFile C:\Users\$name\BioImageIT\install_main.bat
+
+
 
 
 
@@ -114,16 +115,29 @@ $directo.Add_Click({
 
 
 $bioimageit.Add_Click({
-    Write-Host "Installing BioImageIT"
+    Write-Host "Installing BioImageIT..."
+
+    Invoke-WebRequest -Uri https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/windows/install_conda.bat -OutFile C:\Users\$name\BioImageIT\install_conda.bat
+    Invoke-WebRequest -Uri https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/windows/install_git.bat -OutFile C:\Users\$name\BioImageIT\install_git.bat
+    Invoke-WebRequest -Uri https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/windows/install_fiji.bat -OutFile C:\Users\$name\BioImageIT\install_fiji.bat
     $ProgressBar.Value = 10
-    cmd /c C:\Users\$name\BioImageIT\install_main.bat $FolderBrowser.SelectedPath
+
+    cmd /c C:\Users\$name\BioImageIT\install_conda.bat $FolderBrowser.SelectedPath
+    $ProgressBar.Value = 40
+
+    cmd /c C:\Users\$name\BioImageIT\install_git.bat $FolderBrowser.SelectedPath
+    $ProgressBar.Value = 70
+    
+    cmd /c C:\Users\$name\BioImageIT\install_fiji.bat $FolderBrowser.SelectedPath
     $path.text = "Installing BioImageIT..." 
     $ProgressBar.Value = 100
 })
  
 
 $fin.Add_Click({
-    Remove-Item C:\Users\$name\BioImageIT\install_main.bat
+    Remove-Item C:\Users\$name\BioImageIT\install_conda.bat
+    Remove-Item C:\Users\$name\BioImageIT\install_git.bat
+    Remove-Item C:\Users\$name\BioImageIT\install_fiji.bat
     $Form.Close()
 })
 
