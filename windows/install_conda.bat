@@ -74,3 +74,5 @@ git clone https://github.com/bioimageit/bioimageit-package.git
 git clone https://github.com/bioimageit/bioimageit-install.git
 git clone https://github.com/bioimageit/bioimageit-notebooks.git
 
+rem plugins
+git clone https://github.com/bioimageit/bioimageit-omero.git
