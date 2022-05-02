@@ -48,3 +48,29 @@ call %conda_path% install -y git
 call %conda_path% install -y -c ome omero-py
 call %conda_path% install -y -c conda-forge gitpython
 
+
+rem call install_aftergit.bat
+set in_destination_dir="."
+set in_backend="CONDA"
+
+REM check inputs
+echo "destination dir:" %in_destination_dir%
+echo "backend:" %in_backend%
+
+
+cd %in_destination_dir%
+cd %bioimageit_dir%
+rem %python_path% -m venv .bioimageit-env
+rem call .bioimageit-env\Scripts\activate
+
+rem main app
+git clone https://github.com/bioimageit/bioimageit_framework.git
+git clone https://github.com/bioimageit/bioimageit_core.git
+git clone https://github.com/bioimageit/bioimageit_gui.git
+git clone https://github.com/bioimageit/bioimageit_formats.git
+git clone https://github.com/bioimageit/bioimageit_viewer.git
+git clone https://github.com/bioimageit/bioimageit-toolboxes.git
+git clone https://github.com/bioimageit/bioimageit-package.git
+git clone https://github.com/bioimageit/bioimageit-install.git
+git clone https://github.com/bioimageit/bioimageit-notebooks.git
+
