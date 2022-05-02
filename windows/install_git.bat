@@ -20,6 +20,7 @@ exit /B
 
 :LOG
 
+call %miniconda_path%\Scripts\activate.bat bioimageit
 
 REM create toolboxes database
 mkdir toolboxes
