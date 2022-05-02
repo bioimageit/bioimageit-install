@@ -21,33 +21,6 @@ exit /B
 :LOG
 
 
-rem rem installation Miniconda
-rem if not exist "%bioimageit_dir%\Miniconda3\condabin\conda.bat" curl https://repo.anaconda.com/miniconda/Miniconda3-py39_4.10.3-Windows-x86_64.exe --output miniconda_installer.exe
-rem if not exist "%bioimageit_dir%\Miniconda3\condabin\conda.bat" start /wait "" miniconda_installer.exe /InstallationType=JustMe /RegisterPython=0 /S /D=%bioimageit_dir%\Miniconda3
-rem if exist "%bioimageit_dir%\Miniconda3\condabin\conda.bat" echo Miniconda already installed
-	
-rem if exist miniconda_installer.exe del miniconda_installer.exe	
-
-
-rem set conda_path="%bioimageit_dir%\Miniconda3\condabin\conda.bat"
-
-rem call %conda_path% upgrade conda -y
-rem call %conda_path% config --add channels conda-forge
-rem call %conda_path% config --add channels bioimageit
-rem call %conda_path% create -y --name bioimageit python=3.9
-
-
-rem rem call install.bat
-rem set miniconda_path=%bioimageit_dir%\Miniconda3
-rem set conda_path="%bioimageit_dir%\Miniconda3\condabin\conda.bat"
-rem set python_path="%bioimageit_dir%\Miniconda3\envs\bioimageit\python.exe"
-
-rem call %miniconda_path%\Scripts\activate.bat bioimageit
-
-rem call %conda_path% install -y git 
-rem call %conda_path% install -y -c ome omero-py
-rem call %conda_path% install -y -c conda-forge gitpython
-
 
 rem call install_aftergit.bat
 set in_destination_dir="."
