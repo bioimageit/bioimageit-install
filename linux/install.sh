@@ -84,6 +84,9 @@ cd $userdir
 mkdir -p "$installdir"
 cd "$installdir"
 
+# create log file
+exec >$installdir/install.log 2>&1
+
 # install Local Miniconda
 install_miniconda $installdir
 
