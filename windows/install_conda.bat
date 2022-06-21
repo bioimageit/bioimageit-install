@@ -35,8 +35,7 @@ call %conda_path% upgrade conda -y
 call %conda_path% config --add channels conda-forge
 call %conda_path% config --add channels bioimageit
 
-call %miniconda_path%\Scripts\activate.bat base
-call %conda_path% install -y -c conda-forge mamba && mamba create -n bioimageit python=3.9 -y
+call %miniconda_path%\Scripts\activate.bat base && call %conda_path% install -y -c conda-forge mamba && mamba create -n bioimageit python=3.9 -y
 
 
 rem call install.bat
