@@ -43,7 +43,7 @@ set miniconda_path=%bioimageit_dir%\Miniconda3
 set conda_path="%bioimageit_dir%\Miniconda3\condabin\conda.bat"
 set python_path="%bioimageit_dir%\Miniconda3\envs\bioimageit\python.exe"
 
-call %miniconda_path%\Scripts\activate.bat bioimageit && micromamba install -y git && micromamba install -y -c ome omero-py && micromamba install -y -c conda-forge gitpython
+micromamba activate bioimageit && micromamba install -y git && micromamba install -y -c ome omero-py && micromamba install -y -c conda-forge gitpython
 
 
 rem call install_aftergit.bat
