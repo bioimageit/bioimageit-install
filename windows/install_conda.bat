@@ -35,7 +35,7 @@ call %conda_path% upgrade conda -y
 call %conda_path% config --add channels conda-forge
 call %conda_path% config --add channels bioimageit
 
-call %miniconda_path%\Scripts\activate.bat base && call %conda_path% install -y -c conda-forge mamba && mamba create -n bioimageit python=3.9 -y
+call %miniconda_path%\Scripts\activate.bat base && call %conda_path% install -y -c conda-forge micromamba && micromamba create -n bioimageit python=3.9 -y
 
 
 rem call install.bat
@@ -43,7 +43,7 @@ set miniconda_path=%bioimageit_dir%\Miniconda3
 set conda_path="%bioimageit_dir%\Miniconda3\condabin\conda.bat"
 set python_path="%bioimageit_dir%\Miniconda3\envs\bioimageit\python.exe"
 
-mamba activate bioimageit && mamba install -y git && mamba install -y -c ome omero-py && mamba install -y -c conda-forge gitpython
+micromamba activate bioimageit && micromamba install -y git && micromamba install -y -c ome omero-py && micromamba install -y -c conda-forge gitpython
 
 
 rem call install_aftergit.bat
