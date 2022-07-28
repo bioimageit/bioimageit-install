@@ -13,6 +13,9 @@ pip_path="$installdir/miniconda3/bin/pip"
 
 
 ##################### Shortcuts #######################
+# create log file
+exec >$installdir/install.log 2>&1
+
 cd $installdir
 
 wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/linux/bioimageit.desktop
