@@ -79,7 +79,10 @@ conda_sh="$installdir/miniconda3/etc/profile.d/conda.sh"
 python_path="$installdir/miniconda3/bin/python"
 pip_path="$installdir/miniconda3/bin/pip"
 
-
+# create the install directory
+cd $userdir
+mkdir -p "$installdir"
+cd "$installdir"
 
 # create log file
 exec >$installdir/install.log 2>&1
