@@ -11,9 +11,6 @@ python_path="$installdir/miniconda3/bin/python"
 pip_path="$installdir/miniconda3/bin/pip"
 
 
-# create log file
-exec >$installdir/install.log 2>&1
-
 ########## install_main.sh ##########
 
 wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/linux/install_main.sh && chmod +x install_main.sh && sh install_main.sh
