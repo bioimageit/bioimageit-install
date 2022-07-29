@@ -24,18 +24,18 @@ setup_bioimageit(){
     cd $in_destination_dir 
 
     # main app
-    git clone https://github.com/bioimageit/bioimageit_framework.git
-    git clone https://github.com/bioimageit/bioimageit_formats.git
-    git clone https://github.com/bioimageit/bioimageit_core.git
-    git clone https://github.com/bioimageit/bioimageit_gui.git
-    git clone https://github.com/bioimageit/bioimageit_viewer.git
+    git clone https://github.com/bioimageit/bioimageit_framework.git --branch v0.1.2
+    git clone https://github.com/bioimageit/bioimageit_formats.git --branch v0.1.2
+    git clone https://github.com/bioimageit/bioimageit_core.git --branch v0.1.2
+    git clone https://github.com/bioimageit/bioimageit_gui.git --branch v0.1.2
+    git clone https://github.com/bioimageit/bioimageit_viewer.git --branch v0.1.2
     git clone https://github.com/bioimageit/bioimageit-toolboxes.git
     git clone https://github.com/bioimageit/bioimageit-tools.git
     git clone https://github.com/bioimageit/bioimageit-package.git
     git clone https://github.com/bioimageit/bioimageit-notebooks.git
 
     # plugins
-    git clone https://github.com/bioimageit/bioimageit-omero.git
+    git clone https://github.com/bioimageit/bioimageit-omero.git --branch v0.1.2
 
     # create toolboxes database
     mkdir toolboxes
