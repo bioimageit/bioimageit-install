@@ -35,7 +35,8 @@ REM create shortcuts
 copy .\bioimageit-package\windows\BioImageIT.bat .\BioImageIT.bat
 copy .\bioimageit-package\windows\jupyter.bat .\jupyter.bat
 copy .\bioimageit-package\windows\workspace.bat .\workspace.bat
-copy .\bioimageit-install\windows\uninstall_bioimageit.bat .\uninstall_bioimageit.bat
+mkdir ..\AppData\Local\BioImageIT
+copy .\bioimageit-install\windows\uninstall_bioimageit.bat ..\AppData\Local\BioImageIT\uninstall_bioimageit.bat
 
 
 REM workspace
