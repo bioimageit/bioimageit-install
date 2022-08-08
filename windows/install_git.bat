@@ -36,8 +36,10 @@ copy .\bioimageit-package\windows\BioImageIT.bat .\BioImageIT.bat
 copy .\bioimageit-package\windows\jupyter.bat .\jupyter.bat
 copy .\bioimageit-package\windows\workspace.bat .\workspace.bat
 mkdir ..\AppData\Local\BioImageIT
-copy .\bioimageit-install\windows\uninstall_bioimageit.bat ..\AppData\Local\BioImageIT\uninstall_bioimageit.bat
+cd C:\Users\%USERNAME%
+copy %bioimageit_dir%\bioimageit-install\windows\uninstall_bioimageit.bat .\AppData\Local\BioImageIT\uninstall_bioimageit.bat
 
+cd %bioimageit_dir%
 
 REM workspace
 mkdir workspace
