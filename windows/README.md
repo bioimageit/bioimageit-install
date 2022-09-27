@@ -4,7 +4,7 @@ You need to install the PS2EXE Powershell extension with the command (Powershell
 Install-Module ps2exe
 ```
 
-Then, type the following command in the Powershell Terminhal :
+Then, type the following command in the Powershell Terminal :
 ```bash
 ps2exe PATH_TO/install_BioImageIT.ps1 PATH_TO/YOUR_NEW_EXE.exe
 ```
