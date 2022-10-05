@@ -33,19 +33,26 @@ set conda_path="%bioimageit_dir%\Miniconda3\condabin\conda.bat"
 
 call %miniconda_path%\Scripts\activate.bat base
 
-call %conda_path% upgrade conda -y
+call %conda_path% update conda -y
+call %conda_path% install openssl -y
+rem pip install pyOpenSSL
+
+rem call %conda_path% upgrade conda -y
 call %conda_path% config --add channels conda-forge
 call %conda_path% config --add channels bioimageit
 call %conda_path% create -y --name bioimageit python=3.9
-
-pip install pyOpenSSL
 
 rem call install.bat
 set miniconda_path=%bioimageit_dir%\Miniconda3
 set conda_path="%bioimageit_dir%\Miniconda3\condabin\conda.bat"
 set python_path="%bioimageit_dir%\Miniconda3\envs\bioimageit\python.exe"
 
+call %conda_path% update conda -y
+
 call %miniconda_path%\Scripts\activate.bat bioimageit
+
+call %conda_path% install openssl -y
+rem pip install pyOpenSSL
 
 call %conda_path% install -y git 
 call %conda_path% install -y -c ome omero-py
