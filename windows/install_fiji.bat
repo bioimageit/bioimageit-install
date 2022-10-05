@@ -13,6 +13,9 @@ set python_path="%bioimageit_dir%\Miniconda3\envs\bioimageit\python.exe"
 set in_destination_dir="."
 set in_backend="CONDA"
 
+set SSL_NO_VERIFY=1
+call %conda_path% skeleton pypi a_package
+set SSL_NO_VERIFY=1
 
 set LOGFILE=%1installation.log
 call :LOG >> %LOGFILE% 2>&1

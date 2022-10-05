@@ -31,11 +31,14 @@ if exist miniconda_installer.exe del miniconda_installer.exe
 
 set conda_path="%bioimageit_dir%\Miniconda3\condabin\conda.bat"
 
+call %miniconda_path%\Scripts\activate.bat base
+
 call %conda_path% upgrade conda -y
 call %conda_path% config --add channels conda-forge
 call %conda_path% config --add channels bioimageit
 call %conda_path% create -y --name bioimageit python=3.9
 
+pip install pyOpenSSL
 
 rem call install.bat
 set miniconda_path=%bioimageit_dir%\Miniconda3
