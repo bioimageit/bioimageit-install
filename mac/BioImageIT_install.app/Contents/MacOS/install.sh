@@ -12,6 +12,7 @@ install_miniconda(){
     . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda upgrade conda -y
     . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda config --add channels conda-forge
     . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda config --add channels bioimageit
+    . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda install -c conda-forge wget
 }   
 
 setup_bioimageit(){
