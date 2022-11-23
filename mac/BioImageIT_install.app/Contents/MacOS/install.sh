@@ -24,7 +24,7 @@ setup_bioimageit(){
     cd $in_destination_dir 
 
     # main app
-    git clone git@github.com:bioimageit/bioimageit_framework.git --branch m1_test
+    git clone https://github.com/bioimageit/bioimageit_framework.git --branch m1_test
     git clone https://github.com/bioimageit/bioimageit_formats.git
     git clone https://github.com/bioimageit/bioimageit_core.git
     git clone https://github.com/bioimageit/bioimageit_gui.git
