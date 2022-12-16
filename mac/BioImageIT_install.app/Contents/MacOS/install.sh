@@ -1,7 +1,4 @@
 #!/bin/bash
-# redirect stdout/stderr to a file
-installdir="$userdir/BioImageIT"
-exec >$installdir/installation.log 2>&1
 
 
 install_miniconda(){
@@ -91,6 +88,9 @@ pip_path="$installdir/miniconda3/envs/bioimageit/bin/pip"
 cd $userdir
 mkdir -p "$installdir"
 cd "$installdir"
+
+# log
+exec >$installdir/installation.log 2>&1
 
 # install Local Miniconda
 install_miniconda $installdir
