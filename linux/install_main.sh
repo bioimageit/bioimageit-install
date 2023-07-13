@@ -100,8 +100,7 @@ install_miniconda $installdir
 . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda install -c conda-forge pyside2 -y
 #. "$installdir/miniconda3/etc/profile.d/conda.sh" && conda install -c conda-forge qt -y
 . "$installdir/miniconda3/etc/profile.d/conda.sh" && conda install -y -c conda-forge gitpython
-# Test with/without the line below 
-. "$installdir/miniconda3/etc/profile.d/conda.sh" && conda install -y -c conda-forge imageio-ffmpeg 
+. "$installdir/miniconda3/etc/profile.d/conda.sh" && conda install -y -c conda-forge imageio-ffmpeg
 
 # clone and setup BioImageIT
 setup_bioimageit $installdir $python_path $pip_path $USER "CONDA" 

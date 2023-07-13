@@ -13,6 +13,10 @@ set python_path="%bioimageit_dir%\Miniconda3\envs\bioimageit\python.exe"
 set in_destination_dir="."
 set in_backend="CONDA"
 
+set SSL_NO_VERIFY=1
+call %conda_path% skeleton pypi a_package
+set SSL_NO_VERIFY=1
+
 set LOGFILE=%1installation.log
 call :LOG >> %LOGFILE% 2>&1
 exit /B
@@ -34,7 +38,11 @@ REM create shortcuts
 copy .\bioimageit-package\windows\BioImageIT.bat .\BioImageIT.bat
 copy .\bioimageit-package\windows\jupyter.bat .\jupyter.bat
 copy .\bioimageit-package\windows\workspace.bat .\workspace.bat
-copy .\bioimageit-install\windows\uninstall_bioimageit.bat .\uninstall_bioimageit.bat
+mkdir ..\AppData\Local\BioImageIT
+cd C:\Users\%USERNAME%
+copy %bioimageit_dir%\bioimageit-install\windows\uninstall_bioimageit.bat .\AppData\Local\BioImageIT\uninstall_bioimageit.bat
+
+cd %bioimageit_dir%
 
 REM workspace
 mkdir workspace

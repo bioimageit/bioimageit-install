@@ -1,5 +1,6 @@
 #!/bin/bash
 # redirect stdout/stderr to a file
+installdir="$userdir/BioImageIT"
 exec >installation.log 2>&1
 
 
