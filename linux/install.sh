@@ -1,39 +1,50 @@
-######################## MAIN #######################
-backend="CONDA"
+#!/bin/bash
 
-# setup usefull path
-userdir="/home/$USER"
+debug=false
+biit_version=v0.1.3
 
-installdir="$userdir/BioImageIT"
-conda_bin="$installdir/miniconda3/condabin/conda"
-conda_sh="$installdir/miniconda3/etc/profile.d/conda.sh"
-python_path="$installdir/miniconda3/bin/python"
-pip_path="$installdir/miniconda3/bin/pip"
+if [ "$debug" = false ]; then
+    wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/$biit_version/linux/install.conf
+fi
+
+## Source conf file
+. ./install.conf
+
+
+if [ "$debug" = true ]; then
+    echo "Debugging. Local install files will be used and they won’t be deleted."
+else
+    wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/$biit_version/linux/install_main.sh
+    wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/$biit_version/linux/install_fiji.sh 
+    wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/$biit_version/linux/install_shortcuts.sh 
+fi
 
 
 ########## install_main.sh ##########
 
-wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/linux/install_main.sh && chmod +x install_main.sh && sh install_main.sh
+chmod +x install_main.sh && ./install_main.sh
 echo "25 %"
-
 
 ########## install_fiji.sh ##########
 
-wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/linux/install_fiji.sh && chmod +x install_fiji.sh && sh install_fiji.sh
+chmod +x install_fiji.sh && ./install_fiji.sh
 echo "50 %"
-
 
 ########## install_shortcuts.sh ##########
 
-wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/linux/install_shortcuts.sh && chmod +x install_shortcuts.sh && sh install_shortcuts.sh
+
+chmod +x install_shortcuts.sh && ./install_shortcuts.sh
 echo "75 %"
 
 ########## Remove sh files ##########
 cd $userdir
 
-rm install_main.sh
-rm install_fiji.sh
-rm install_shortcuts.sh
+if [ "$debug" = false ]; then
+    rm install.conf
+    rm install_main.sh
+    rm install_fiji.sh
+    rm install_shortcuts.sh
+fi
 
 echo "100 %"
 echo "BioImageIT is installed."
