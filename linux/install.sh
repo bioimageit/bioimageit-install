@@ -1,5 +1,6 @@
 #!/bin/bash
 
+execution_path=$(pwd)
 debug=false
 biit_version=v0.1.3
 
@@ -37,7 +38,7 @@ chmod +x install_shortcuts.sh && ./install_shortcuts.sh
 echo "75 %"
 
 ########## Remove sh files ##########
-cd $userdir
+cd $execution_path
 
 if [ "$debug" = false ]; then
     rm install.conf
