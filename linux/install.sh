@@ -23,18 +23,18 @@ fi
 
 ########## install_main.sh ##########
 
-chmod +x install_main.sh && ./install_main.sh
+chmod +x install_main.sh && sh install_main.sh
 echo "25 %"
 
 ########## install_fiji.sh ##########
 
-chmod +x install_fiji.sh && ./install_fiji.sh
+chmod +x install_fiji.sh && sh install_fiji.sh
 echo "50 %"
 
 ########## install_shortcuts.sh ##########
 
 
-chmod +x install_shortcuts.sh && ./install_shortcuts.sh
+chmod +x install_shortcuts.sh && sh install_shortcuts.sh
 echo "75 %"
 
 ########## Remove sh files ##########
