@@ -18,20 +18,53 @@ setup_bioimageit(){
     in_username=$1
     in_backend=$2
 
+    framework_repo=https://github.com/bioimageit/bioimageit_framework.git
+    echo $biit_framework_tag
+    [[ ! -z "$biit_framework_tag" ]] && framework_repo+=" --branch ${biit_framework_tag}"
+    echo $framework_repo
+
+    core_repo=https://github.com/bioimageit/bioimageit_core.git
+    [[ ! -z "$biit_core_tag" ]] && core_repo+=" --branch ${biit_core_tag}"
+
+    gui_repo=https://github.com/bioimageit/bioimageit_gui.git
+    [[ ! -z "$biit_gui_tag" ]] && gui_repo+=" --branch ${bitt_gui_tag}"
+
+    formats_repo=https://github.com/bioimageit/bioimageit_formats.git
+    [[ ! -z "$biit_formats_tag" ]] && formats_repo+=" --branch ${biit_formats_tag}"
+
+    viewer_repo=https://github.com/bioimageit/bioimageit_viewer.git
+    [[ ! -z "$biit_viewer_tag" ]] && viewer_repo+=" --branch ${biit_viewer_tag}"
+
+    toolboxes_repo=https://github.com/bioimageit/bioimageit-toolboxes.git
+    [[ ! -z "$biit_toolboxes_tag" ]] && toolboxes_repo+=" --branch ${biit_toolboxes_tag}"
+
+    tools_repo=https://github.com/bioimageit/bioimageit-tools.git
+    [[ ! -z "$biit_tools_tag" ]] && tools_repo+=" --branch ${biit_tools_tag}"
+
+    package_repo=https://github.com/bioimageit/bioimageit-package.git
+    [[ ! -z "$biit_package_tag" ]] && package_repo+=" --branch ${biit_package_tag}"
+
+    notebooks_repo=https://github.com/bioimageit/bioimageit-notebooks.git
+    [[ ! -z "$biit_notebooks_tag" ]] && notebooks_repo+=" --branch ${biit_notebooks_tag}"
+
+    omero_repo=https://github.com/bioimageit/bioimageit-omero.git
+    [[ ! -z "$biit_omero_tag" ]] && omero_repo+=" --branch ${biit_omero_tag}"
+
+
     # main app
     cd $installdir
-    . "$conda_sh" && conda activate bioimageit && git clone https://github.com/bioimageit/bioimageit_framework.git --branch v0.1.3
-    . "$conda_sh" && conda activate bioimageit && git clone https://github.com/bioimageit/bioimageit_core.git --branch v0.1.3
-    . "$conda_sh" && conda activate bioimageit && git clone https://github.com/bioimageit/bioimageit_gui.git --branch v0.1.3
-    . "$conda_sh" && conda activate bioimageit && git clone https://github.com/bioimageit/bioimageit_formats.git --branch v0.1.3
-    . "$conda_sh" && conda activate bioimageit && git clone https://github.com/bioimageit/bioimageit_viewer.git --branch v0.1.3
-    . "$conda_sh" && conda activate bioimageit && git clone https://github.com/bioimageit/bioimageit-toolboxes.git
-    . "$conda_sh" && conda activate bioimageit && git clone https://github.com/bioimageit/bioimageit-tools.git
-    . "$conda_sh" && conda activate bioimageit && git clone https://github.com/bioimageit/bioimageit-package.git
-    . "$conda_sh" && conda activate bioimageit && git clone https://github.com/bioimageit/bioimageit-notebooks.git
+    . "$conda_sh" && conda activate bioimageit && git clone $framework_repo
+    . "$conda_sh" && conda activate bioimageit && git clone $core_repo
+    . "$conda_sh" && conda activate bioimageit && git clone $gui_repo
+    . "$conda_sh" && conda activate bioimageit && git clone $formats_repo
+    . "$conda_sh" && conda activate bioimageit && git clone $viewer_repo
+    . "$conda_sh" && conda activate bioimageit && git clone $toolboxes_repo
+    . "$conda_sh" && conda activate bioimageit && git clone $tools_repo
+    . "$conda_sh" && conda activate bioimageit && git clone $package_repo
+    . "$conda_sh" && conda activate bioimageit && git clone $notebooks_repo
    
     # plugins
-    . "$conda_sh" && conda activate bioimageit && git clone https://github.com/bioimageit/bioimageit-omero.git --branch v0.1.3
+    . "$conda_sh" && conda activate bioimageit && git clone $omero_repo
 
     # create toolboxes database
     mkdir toolboxes
