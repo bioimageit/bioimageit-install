@@ -19,9 +19,7 @@ setup_bioimageit(){
     in_backend=$2
 
     framework_repo=https://github.com/bioimageit/bioimageit_framework.git
-    echo $biit_framework_tag
     [[ ! -z "$biit_framework_tag" ]] && framework_repo+=" --branch ${biit_framework_tag}"
-    echo $framework_repo
 
     core_repo=https://github.com/bioimageit/bioimageit_core.git
     [[ ! -z "$biit_core_tag" ]] && core_repo+=" --branch ${biit_core_tag}"
@@ -112,14 +110,12 @@ install_miniconda
 
 # create bioimageit env
 . "$conda_sh" && conda create -y --name bioimageit python=3.9
-. "$conda_sh" && conda activate bioimageit && conda install -y -c ome omero-py
 
 # install git
-. "$conda_sh" && conda install git -y
+. "$conda_sh" && conda activate bioimageit && conda install git -y
+. "$conda_sh" && conda install -y -c conda-forge gitpython
 . "$conda_sh" && conda install -c ome omero-py -y
 . "$conda_sh" && conda install -c conda-forge pyside2 -y
-#. "$conda_sh" && conda install -c conda-forge qt -y
-. "$conda_sh" && conda install -y -c conda-forge gitpython
 
 # clone and setup BioImageIT
 setup_bioimageit $USER $backend 
