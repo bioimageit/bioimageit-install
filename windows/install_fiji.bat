@@ -3,6 +3,8 @@ cd %1
 set bioimageit_dir=%1
 echo %bioimageit_dir%
 
+call config.bat
+
 call :LOG >> %LOGFILE% 2>&1
 exit /B
 
@@ -15,7 +17,7 @@ rem INSTALLING FIJI/IMAGEJ
 
 cd %bioimageit_dir%
 
-curl %fiji_version > fiji.zip
+curl %fiji_version% > fiji.zip
 
 powershell -command Expand-Archive -Force .\fiji.zip .\
 
