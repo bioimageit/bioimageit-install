@@ -149,34 +149,42 @@ $directo.Add_Click({
 
 
 $bioimageit.Add_Click({
-    Write-Host "Installing BioImageIT..."
+    $bitt_install_version = "fixing-v0.1.3"
+    Write-Host "Installing BioImageIT $bitt_install_version..."
+    
+    $config_bat = "$($path.text)config.bat"
+    $conda_bat ="$($path.text)install_conda.bat"
+    $git_bat = "$($path.text)install_git.bat"
+    $fiji_bat = "$($path.text)install_fiji.bat"
 
-    Invoke-WebRequest -Uri https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/windows/install_conda.bat -OutFile C:\Users\$name\BioImageIT\install_conda.bat
-    Invoke-WebRequest -Uri https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/windows/install_git.bat -OutFile C:\Users\$name\BioImageIT\install_git.bat
-    Invoke-WebRequest -Uri https://raw.githubusercontent.com/bioimageit/bioimageit-install/main/windows/install_fiji.bat -OutFile C:\Users\$name\BioImageIT\install_fiji.bat
+    Invoke-WebRequest -Uri https://raw.githubusercontent.com/bioimageit/bioimageit-install/$bitt_install_version/windows/config.bat -OutFile $config_bat
+    Invoke-WebRequest -Uri https://raw.githubusercontent.com/bioimageit/bioimageit-install/$bitt_install_version/windows/install_conda.bat -OutFile $conda_bat
+    Invoke-WebRequest -Uri https://raw.githubusercontent.com/bioimageit/bioimageit-install/$bitt_install_version/windows/install_git.bat -OutFile $git_bat
+    Invoke-WebRequest -Uri https://raw.githubusercontent.com/bioimageit/bioimageit-install/$bitt_install_version/windows/install_fiji.bat -OutFile $fiji_bat
     $ProgressBar.Value = 10
 
-    cmd /c C:\Users\$name\BioImageIT\install_conda.bat $FolderBrowser.SelectedPath
+    cmd /c $conda_bat $path.text
     $ProgressBar.Value = 40
 
-    cmd /c C:\Users\$name\BioImageIT\install_git.bat $FolderBrowser.SelectedPath
+    cmd /c $git_bat $path.text
     $ProgressBar.Value = 70
     
-    cmd /c C:\Users\$name\BioImageIT\install_fiji.bat $FolderBrowser.SelectedPath
+    cmd /c $fiji_bat $path.text
     $path.text = "Installing BioImageIT..." 
     $ProgressBar.Value = 100
 })
  
 
 $fin.Add_Click({
-    Remove-Item C:\Users\$name\BioImageIT\install_conda.bat
-    Remove-Item C:\Users\$name\BioImageIT\install_git.bat
-    Remove-Item C:\Users\$name\BioImageIT\install_fiji.bat
+    Remove-Item "$($path.text)config.bat"
+    Remove-Item "$($path.text)install_conda.bat"
+    Remove-Item "$($path.text)install_git.bat"
+    Remove-Item "$($path.text)install_fiji.bat"
     $Form.Close()
 })
 
 
-Remove-Item C:\Users\$name\BioImageIT\ico.icon
+Remove-Item "$($path.text)ico.icon"
 
 
 
