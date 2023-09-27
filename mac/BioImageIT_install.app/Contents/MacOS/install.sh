@@ -106,6 +106,7 @@ setup_bioimageit(){
 
 # create the install directory
 userdir="/Users/$USER"
+installdir="$userdir/BioImageIT"
 cd $userdir
 mkdir -p "$installdir"
 cd "$installdir"
