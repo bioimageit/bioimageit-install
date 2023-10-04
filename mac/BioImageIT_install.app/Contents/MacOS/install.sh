@@ -1,9 +1,9 @@
 #!/bin/bash
 
-. ./install.conf
+local_dir="$(dirname "$0")"
+. $local_dir/install.conf
 
 install_miniconda(){
-    installdir=$1
 
     mkdir $installdir/miniconda3
     curl -o "$installdir/miniconda3/miniconda.sh" https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
@@ -105,8 +105,6 @@ setup_bioimageit(){
 
 
 # create the install directory
-userdir="/Users/$USER"
-installdir="$userdir/BioImageIT"
 cd $userdir
 mkdir -p "$installdir"
 cd "$installdir"
