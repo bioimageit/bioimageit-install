@@ -27,7 +27,7 @@ setup_bioimageit(){
     [[ ! -z "$biit_core_tag" ]] && core_repo+=" --branch ${biit_core_tag}"
     
     gui_repo=https://github.com/bioimageit/bioimageit_gui.git
-    [[ ! -z "$biit_gui_tag" ]] && gui_repo+=" --branch ${bitt_gui_tag}"
+    [[ ! -z "$biit_gui_tag" ]] && gui_repo+=" --branch ${biit_gui_tag}"
     
     formats_repo=https://github.com/bioimageit/bioimageit_formats.git
     [[ ! -z "$biit_formats_tag" ]] && formats_repo+=" --branch ${biit_formats_tag}"
@@ -130,7 +130,7 @@ setup_bioimageit $USER $backend
 ###################### FIJI ###########################
 cd $installdir
 
-curl https://downloads.imagej.net/$fiji_version/latest/fiji-macosx.zip -o Fiji.zip
+curl https://downloads.imagej.net/fiji/$fiji_version/fiji-macosx.zip -o Fiji.zip
 unzip -o Fiji.zip
 rm Fiji.zip
 
