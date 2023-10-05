@@ -11,16 +11,16 @@ set in_backend="CONDA"
 
 set LOGFILE=%1installation.log
 
-set biit_framework_tag=v0.1.3
-set biit_core_tag=v0.1.3
-set biit_gui_tag=v0.1.3
-set biit_formats_tag=v0.1.3
-set biit_viewer_tag=v0.1.3
-set biit_toolboxes_tag=
+set biit_framework_tag=v0.2.0
+set biit_core_tag=v0.2.0
+set biit_gui_tag=v0.2.0
+set biit_formats_tag=v0.2.0
+set biit_viewer_tag=v0.2.0
+set biit_toolboxes_tag=v0.2.0
 set biit_package_tag=
-set biit_install_tag=v0.1.3
+set biit_install_tag=v0.2.0
 set biit_notebooks_tag=
-set biit_omero_tag=v0.1.3
+set biit_omero_tag=v0.2.0
 
 set framework_repo=https://github.com/bioimageit/bioimageit_framework.git
 echo %framework_repo%
