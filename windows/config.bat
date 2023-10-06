@@ -18,7 +18,7 @@ set biit_formats_tag=v0.2.0
 set biit_viewer_tag=v0.2.0
 set biit_toolboxes_tag=v0.2.0
 set biit_package_tag=
-set biit_install_tag=v0.2.0
+set biit_install_tag=update-v0.2.0
 set biit_notebooks_tag=
 set biit_omero_tag=v0.2.0
 
