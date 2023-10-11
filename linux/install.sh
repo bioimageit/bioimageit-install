@@ -2,7 +2,7 @@
 
 execution_path=$(pwd)
 debug=false
-biit_version=update-v0.2.0
+biit_version=v0.2.0
 
 if [ "$debug" = false ]; then
     wget https://raw.githubusercontent.com/bioimageit/bioimageit-install/$biit_version/linux/install.conf
